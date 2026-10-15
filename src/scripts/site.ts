@@ -136,7 +136,7 @@ if (menuBtn && menu && nav) {
 
 /* ---------- Click sparkles: a burst of seven ✦ in palette colours ---------- */
 const sparks = $(".sparks");
-const SPARK_COLOURS = ["#D5306D", "#FF92C1", "#EEB17D", "#E6C14F", "#FFFFFF", "#D5306D", "#FF92C1"];
+const SPARK_COLOURS = ["#223382", "#9BACD8", "#F98513", "#DAD1C8", "#FFFFFF", "#223382", "#F98513"];
 document.addEventListener("pointerdown", (e) => {
   if (!sparks || reduced() || e.button !== 0) return;
   const base = Math.random() * Math.PI;

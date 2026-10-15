@@ -1,6 +1,6 @@
 # Lynn Le Design System (v2)
 
-A whimsical, recruiter-safe design system for Lynn Le's Business Analytics portfolio. The site is a soft pink desktop: glossy folders, windows with traffic lights, stickers you can drag, a life story kept as `life-story.txt`. The cute is the wrapper. The numbers inside are real and come from the CV, which is what keeps it credible.
+A whimsical, recruiter-safe design system for Lynn Le's Business Analytics portfolio. The site is a calm desktop in Luster White, Aster and Deep Space Royal, with a Habanero highlight: glossy folders, windows with traffic lights, stickers you can drag, a life story kept as `life-story.txt`. The cute is the wrapper. The numbers inside are real and come from the CV, which is what keeps it credible.
 
 This is version 2. It keeps the original Lynn Le system (palette, Bricolage Grotesque + Space Grotesk, the desktop metaphor, two skins) and tightens it against the patterns that make a page read as AI-generated. Every change is listed under **What changed in v2**.
 
@@ -19,13 +19,28 @@ Do: "Built a sponsor pipeline from scratch." Don't: "Seamlessly revolutionising 
 
 ## Colour
 
-One action colour: **berry** (#D5306D). It is used for primary buttons, the single emphasis word in a headline, active states and the timeline fill. Nothing else on the page competes with it.
+The palette has six colours: **Luster White** #F4F1EC, **Aster Flower Blue** #9BACD8, **Habanero** #F98513, **Jodhpur Tan** #DAD1C8, **Deep Space Royal** #223382 and **Deadly Depths** #111144. Token names are kept from v2, so components didn't change. Only the values did.
 
-The four supporting colours, **pink-mist**, **soft-blush**, **caramel** and **jasmine**, appear as fills (folders, stickers, chips) and always carry **ink** text. White text never sits on pink-mist, caramel or jasmine.
+| token | value | role |
+| --- | --- | --- |
+| berry | #223382 Deep Space Royal | the one action colour |
+| berry-pressed | #111144 Deadly Depths | pressed and hover-deep states |
+| ink | #111144 Deadly Depths | headlines, text on fills |
+| pink-mist | #9BACD8 Aster | fills, glows, rails |
+| soft-blush | #E3E7F2 | Aster tint for chips and washes |
+| caramel | #DAD1C8 Jodhpur Tan | fills, boards |
+| jasmine | #F98513 Habanero | highlight fills: stickers, the emphasis underline, sparks |
+| page | #F4F1EC Luster White | the canvas |
 
-Text colours step down from **ink** (headlines) to **body** (paragraphs), **label** (nav, captions, small links), **meta** (years, uppercase labels) and **muted** (dates). Every text token passes 4.5:1 on page, wash, blush and white. Berry as text is 4.4:1, so it is reserved for text at 24px or larger, or bold at 19px or larger.
+One action colour: **berry**, which is now Deep Space Royal. It is used for primary buttons, the single emphasis word in a headline, active states and the timeline fill. Nothing else on the page competes with it.
 
-Grounds: the full page uses the **page wash** (160deg, wash-pink to wash-peach to wash-cream). Boards use **board** with a 22px **board-dot** grid. Windows use **window** with a title bar gradient from **window-bar-top** to **window-bar-bottom**.
+Habanero is the warm counterweight, not a second accent. It appears only as a fill (the key insight sticker, one folder, the CTA corner glow) and as the highlighter stroke under the emphasis word. Orange is 2.5:1 on Luster White, so it is never text on a light ground. Ink on Habanero is 7.1:1.
+
+The supporting fills, **pink-mist**, **soft-blush**, **caramel** and **jasmine**, always carry **ink** text. Royal and Deadly Depths fills carry **on-berry** (Luster White, 10:1).
+
+Text colours step down from **ink** (headlines) to **body** #33386A (paragraphs), **label** #223382 (nav, captions, small links), **meta** #3D4886 (years, uppercase labels) and **muted** #6A5642 (dates). Every text token passes 4.5:1 on page, tan, blush and white.
+
+Grounds: the full page uses the **page wash** (160deg, Aster tint to Luster White to a warm tan). Boards use **board** #ECE7E0 with a 22px royal **board-dot** grid. Windows use **window** with an Aster title bar. Shadows are tinted with Deadly Depths, never black.
 
 There is no dark mode, and no dark section or footer. The light canvas is part of the brand.
 
@@ -42,20 +57,20 @@ Both are Google Fonts: `Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..
 
 Radii: buttons **radius-btn** (14), stickers and inner panels **radius-md** (18), cards and windows **radius-lg** (22), boards and the CTA panel **radius-xl** (30), pills **radius-pill**. Folder icons use the tab-corner radius `7px 16px 14px 14px`.
 
-Shadows are always pink-tinted: **shadow-card**, **shadow-float**, **shadow-window**, **shadow-folder**, and the primary button's **shadow-lip**, which presses down to 3px.
+Shadows are always tinted with Deadly Depths or royal: **shadow-card**, **shadow-float**, **shadow-window**, **shadow-folder**, and the primary button's **shadow-lip**, which presses down to 3px.
 
 ## Skins
 
 One structure, two skins, switched by a class on the root:
 
-- **glossy** (default, `.ll`): frosted white cards with a 14px blur, soft pink shadows, glossy gradient folders with an inset highlight.
+- **glossy** (default, `.ll`): frosted white cards with a 14px blur, soft navy shadows, glossy gradient folders with an inset highlight.
 - **sticker** (`.ll .ll--sticker`): 2px **ink** outlines and hard offset shadows (**shadow-sticker**, **shadow-sticker-window**), no blur, no highlights.
 
 The skin swaps these variables: `--card-bg`, `--card-border`, `--card-shadow`, `--float-shadow`, `--win-shadow`, `--folder-border`, `--folder-shadow`, `--r`, `--blur`, `--aurora`.
 
 ## Iconography
 
-Phosphor icons only, regular weight in UI and bold weight inside folders and timeline nodes, inlined as SVG with `fill="currentColor"`. Copy the path data from the Phosphor library; never redraw an icon. The **✦** glyph is the brand mark: the logo tile, sparkle bursts and twinkles. Glyphs on light folders (mist, caramel, jasmine) are ink or label; glyphs on berry and rose folders are on-berry.
+Phosphor icons only, regular weight in UI and bold weight inside folders and timeline nodes, inlined as SVG with `fill="currentColor"`. Copy the path data from the Phosphor library; never redraw an icon. The **✦** glyph is the brand mark: the logo tile, sparkle bursts and twinkles. Glyphs on light folders (mist, caramel, jasmine) are ink; glyphs on berry and rose folders are on-berry.
 
 ## Layout
 
@@ -94,6 +109,7 @@ Scroll effects use CSS scroll-driven animations (`animation-timeline: view()` or
 7. **Case study trio.** Problem, what I did and impact are no longer three equal cards: problem is a plain text column, what I did is a checklist window, and impact is a jasmine sticker.
 8. **Stat strip.** Four equal stat cards become one berry lead card and three frosted ones.
 9. **Copy rules.** Zero em-dashes, one label per intent, numbers from the CV only.
+10. **New palette.** The pink and berry palette is replaced by Luster White, Aster, Habanero, Jodhpur Tan, Deep Space Royal and Deadly Depths. The CTA panel is now solid royal with a Habanero glow in the corner, after the palette's royal-to-orange posters.
 
 Still banned: a second accent, dark sections, black shadows, a giant background wordmark, floating bubbles, a pulsing status dot, emoji, scroll listeners.
 

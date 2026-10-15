@@ -65,9 +65,9 @@ export default function MediaLightbox() {
       controller={{ closeOnBackdropClick: true }}
       styles={{
         root: {
-          "--yarl__color_backdrop": "rgba(58, 20, 32, 0.82)",
-          "--yarl__color_button": "rgba(255, 250, 246, 0.9)",
-          "--yarl__color_button_active": "#FFFAF6",
+          "--yarl__color_backdrop": "rgba(17, 17, 68, 0.82)",
+          "--yarl__color_button": "rgba(244, 241, 236, 0.9)",
+          "--yarl__color_button_active": "#F4F1EC",
         },
       }}
       render={{

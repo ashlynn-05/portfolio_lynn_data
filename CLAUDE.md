@@ -4,7 +4,7 @@ Guidance for Claude Code in this repository.
 
 ## Required reading
 
-Read `DESIGN.md` before any UI, content or styling work. It is the design system (Lynn Le Design System v2). Match it: one berry accent, Bricolage Grotesque 800 display over Space Grotesk, Phosphor icons plus the ✦ glyph, no emoji, no em dashes, no dark mode.
+Read `DESIGN.md` before any UI, content or styling work. It is the design system (Lynn Le Design System v2). Match it: one Deep Space Royal accent (token `berry`), Bricolage Grotesque 800 display over Space Grotesk, Phosphor icons plus the ✦ glyph, no emoji, no em dashes, no dark mode.
 
 ## Commands
 

@@ -10,7 +10,7 @@ import { InertiaPlugin } from "gsap/InertiaPlugin";
 gsap.registerPlugin(Draggable, InertiaPlugin);
 
 const sparks = $(".sparks");
-const TRAIL = ["#D5306D", "#FF92C1", "#EEB17D", "#E6C14F", "#FFFFFF"];
+const TRAIL = ["#223382", "#9BACD8", "#F98513", "#DAD1C8", "#FFFFFF"];
 let trailTick = 0;
 
 function trail(x: number, y: number) {
