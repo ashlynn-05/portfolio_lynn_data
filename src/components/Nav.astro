@@ -2,14 +2,14 @@
 import Icon from "./Icon.astro";
 import { to } from "../lib/url";
 
-export type NavKey = "home" | "works" | "story" | "none";
+export type NavKey = "home" | "projects" | "works" | "story" | "none";
 interface Props { current: NavKey }
 const { current } = Astro.props;
 const p = Astro.url.pathname;
 
 const LINKS = [
-  { key: "works", label: "works", href: to(p, "works.html") },
-  { key: "home", label: "experience", href: to(p, "index.html#experience") },
+  { key: "projects", label: "projects", href: to(p, "projects.html") },
+  { key: "works", label: "experience", href: to(p, "works.html") },
   { key: "story", label: "life story", href: to(p, "life-story.html") },
 ] as const;
 ---

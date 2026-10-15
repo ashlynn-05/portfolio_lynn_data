@@ -11,4 +11,4 @@ const { value, prefix = "", suffix = "", text, class: cls = "metric" } = Astro.p
 ---
 {value === null
   ? <span class={cls}>{text}</span>
-  : <span class={cls} data-count={value} data-prefix={prefix} data-suffix={suffix}>{prefix}{value}{suffix}</span>}
+  : <span class={cls} data-count={value} data-prefix={prefix} data-suffix={suffix}>{prefix}{value.toLocaleString("en-US")}{suffix}</span>}

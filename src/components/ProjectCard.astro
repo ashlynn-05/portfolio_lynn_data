@@ -1,0 +1,35 @@
+---
+// A data project as a card: folder glyph, name, one-line summary, the headline number,
+// the tools, then links to the write-up and the code. The title link stretches over
+// the whole card, and the GitHub link sits above it so both stay clickable.
+import Icon from "./Icon.astro";
+import FolderIcon from "./FolderIcon.astro";
+import Metric from "./Metric.astro";
+import type { DataProject } from "../data/content";
+import { to } from "../lib/url";
+
+interface Props { d: DataProject; lead?: boolean; [key: string]: unknown }
+const { d, lead = false, ...rest } = Astro.props;
+const p = Astro.url.pathname;
+const m = d.metrics[0];
+const cover = lead ? d.figures?.[0] : undefined;
+---
+<article class={`pj card${lead ? " pj--lead" : ""}`} {...rest}>
+  {cover && (
+    <div class="pj__cover"><img src={to(p, cover.src)} width={cover.w} height={cover.h} alt={cover.alt} loading="lazy" decoding="async" /></div>
+  )}
+  <div class="pj__body">
+    <div class="pj__top">
+      <FolderIcon icon={d.icon} fill={d.fill} class="pj__fold" />
+      <span class="pj__kind">{d.kind}<i aria-hidden="true">·</i>{d.year}</span>
+    </div>
+    <h3 class="pj__name"><a href={to(p, `projects/${d.slug}.html`)} class="pj__link">{d.name}</a></h3>
+    <p class="pj__sum">{d.summary}</p>
+    <div class="pj__num"><Metric value={m.value} prefix={m.prefix} suffix={m.suffix} text={m.text} class="pj__metric" /><span>{m.caption}</span></div>
+    <ul class="pj__tools">{d.tools.map((t) => <li class="chip chip--outline">{t}</li>)}</ul>
+    <div class="pj__foot">
+      <span class="pj__open">open the case<Icon name="arrow-right" /></span>
+      <a class="pj__gh" href={d.github} target="_blank" rel="noopener noreferrer" aria-label={`${d.name} on GitHub`}><Icon name="github-logo" />code</a>
+    </div>
+  </div>
+</article>

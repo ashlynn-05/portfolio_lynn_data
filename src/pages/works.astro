@@ -8,7 +8,7 @@ import FolderIcon from "../components/FolderIcon.astro";
 import Logo from "../components/Logo.astro";
 import Sticker from "../components/Sticker.astro";
 import Window from "../components/Window.astro";
-import { projects, crmTools } from "../data/content";
+import { projects, stackTools } from "../data/content";
 import { to } from "../lib/url";
 
 const p = Astro.url.pathname;
@@ -18,16 +18,16 @@ const headline = (w: (typeof projects)[number]) => {
 };
 ---
 
-<Layout title="Lynn Le, works" description="Seven case studies from Lynn Le's CV: Sidekick, a BGIS client project, Codrops, Elite TALKS 2025, Kim Beauty Warehouse, The Muse Crochet and a 2026 hackathon run.">
+<Layout title="Lynn Le, experience" description="Four roles from Lynn Le's CV: workflow mapping at Sidekick, a CRM build at Codrops, client dashboards at SW Education and restock signals at The Muse Crochet.">
   <Nav slot="nav" current="works" />
 
   <div class="wrap ls-head">
-    <Window path="~/lynn/works" meta={`${projects.length} folders`} closeHref={to(p, "index.html")} closeLabel="Close and go home" bodyClass="ls-intro">
+    <Window path="~/lynn/experience" meta={`${projects.length} folders`} closeHref={to(p, "index.html")} closeLabel="Close and go home" bodyClass="ls-intro">
       <div style="display: flex; flex-direction: column; gap: 20px">
-        <h1 class="h-xl" data-split-lines>The work <span class="em">folder.</span></h1>
-        <p class="lead" data-intro>Seven folders, each one a role or a run of events from the CV. Open one for the brief, the work and the numbers.</p>
+        <h1 class="h-xl" data-split-lines>The experience <span class="em">folder.</span></h1>
+        <p class="lead" data-intro>Four folders, one for each role on the CV. Open one for the brief, the work and the numbers. The data projects have their own folder.</p>
       </div>
-      <span class="hint" data-intro><Icon name="hand-grabbing" />drag them, or switch to the list below</span>
+      <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start" data-intro><span class="hint"><Icon name="hand-grabbing" />drag them, or switch to the list below</span><a class="btn btn--secondary magnetic" href={to(p, "projects.html")}><Icon name="chart-bar" />see the projects</a></div>
     </Window>
   </div>
 
@@ -65,12 +65,12 @@ const headline = (w: (typeof projects)[number]) => {
     </Window>
 
     <div class="crm card" data-rise>
-      <span class="crm__icon" aria-hidden="true"><Icon name="address-book" weight="bold" /></span>
+      <span class="crm__icon" aria-hidden="true"><Icon name="database" weight="bold" /></span>
       <div class="crm__text">
-        <h3 class="crm__h">Where the pipeline lives</h3>
-        <p class="crm__p">The CRM and prospecting tools I work in for sourcing, outreach and tracking.</p>
+        <h3 class="crm__h">Where the analysis happens</h3>
+        <p class="crm__p">The tools I clean, query and visualise data in.</p>
       </div>
-      <ul class="crm__tools">{crmTools.map((t) => <li class="chip chip--outline">{t}</li>)}</ul>
+      <ul class="crm__tools">{stackTools.map((t) => <li class="chip chip--outline">{t}</li>)}</ul>
     </div>
   </section>
 

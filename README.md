@@ -2,17 +2,17 @@
 
 <img src="public/favicon.svg" alt="Lynn Le logo" width="72" height="72">
 
-# Lynn Le Portfolio
+# Lynn Le Portfolio (data)
 
 **A soft pink desktop of folders, windows and stickers for a Business Analytics student who likes sidequests.**
 
-**Live:** [lynnle-bd-portfolio.vercel.app](https://lynnle-bd-portfolio.vercel.app)
+**Live:** not deployed yet. Once it is on Vercel, set `SITE_URL` or update the fallback in `astro.config.mjs`.
 
 [![Astro](https://img.shields.io/badge/Astro-5-BC52EE?logo=astro&logoColor=white)](https://astro.build)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38BDF8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev)
 [![GSAP](https://img.shields.io/badge/GSAP-3.15-88CE02?logo=greensock&logoColor=black)](https://gsap.com)
-[![Deploy with Vercel](https://img.shields.io/badge/deploy-Vercel-000000?logo=vercel&logoColor=white)](https://vercel.com/new/clone?repository-url=https://github.com/ashlynn-05/portfolio_lynn)
+[![Deploy with Vercel](https://img.shields.io/badge/deploy-Vercel-000000?logo=vercel&logoColor=white)](https://vercel.com/new/clone?repository-url=https://github.com/ashlynn-05/portfolio_lynn_data)
 
 [Overview](#overview) · [Getting started](#getting-started) · [Project structure](#project-structure) · [Editing content](#editing-content) · [Deploy](#deploy)
 
@@ -22,13 +22,14 @@
 
 ## Overview
 
-This is the personal portfolio of **Lynn Le**, a final-year Business Analytics student at Deakin University working across business development, partnerships and analytics. The site uses a desktop metaphor: work lives in draggable folders, case studies open as windows, and the life story is a pinned timeline with a sticker board.
+This is the personal portfolio of **Lynn Le**, a final-year Business Analytics student at Deakin University focused on data analytics: SQL, Power BI, Looker Studio, Python and Excel. The site uses a desktop metaphor: projects and roles live in folders, case studies open as windows, and the life story is a pinned timeline with a sticker board. This is the data-focused version of [portfolio_lynn](https://github.com/ashlynn-05/portfolio_lynn).
 
-The cute is the wrapper. The numbers inside are real: every metric on the site comes from the CV in [`public/BD_resume.pdf`](public/BD_resume.pdf), and a test suite guards that promise.
+The cute is the wrapper. The numbers inside are real: every metric on the site comes from the CV in [`public/data_resume.pdf`](public/data_resume.pdf) or Lynn's own project write-ups, and a test suite guards that promise.
 
 **Highlights**
 
-- Seven case studies (Sidekick, the Deakin x BGIS client project, Codrops, Elite TALKS, Kim Beauty, The Muse Crochet, hackathons), each opening as a window with its headline numbers
+- Seven data projects (BGIS workforce analytics, Altano Bank BI, Wellora marketing analytics, NextWave RFM, RetailPro predictive models, Apex data cleaning, Adidas social listening), each with its approach, dashboards, recommendations and a link to the code
+- Four experience case studies (Sidekick, Codrops, SW Education, The Muse Crochet), each opening as a window with its headline numbers
 - Draggable desk of folders with a list view fallback
 - Cmd+K command palette and a media lightbox, both as React islands
 - Data-attribute driven motion with GSAP, fully disabled under `prefers-reduced-motion`
@@ -100,15 +101,17 @@ Then open http://localhost:4321.
 
 | Path | What it is |
 |------|------------|
-| `/` | Home: hero, CV numbers, manifesto, work folders, experience, skill beams, life story teaser, contact |
-| `/works` | The work folder: draggable desk plus a list view |
-| `/works/[slug]` | Case study with a pinned scroll story (`sidekick`, `codrops`, `elite-talks`, `kim-beauty`, `muse-crochet`, `hackathons`) |
+| `/` | Home: hero, CV numbers, projects, experience folders, job rows, skill beams, life story teaser, contact |
+| `/projects` | The projects folder: project cards plus a list view |
+| `/projects/[slug]` | Data project case page (`bgis`, `altano`, `wellora`, `nextwave`, `retailpro`, `apex`, `adidas`) with dashboards in a lightbox |
+| `/works` | The experience folder: draggable desk plus a list view |
+| `/works/[slug]` | Experience case study (`sidekick`, `codrops`, `sw-education`, `muse-crochet`) |
 | `/life-story` | Pinned timeline of chapters, character sheet and sticker board |
 | `/404` | Not on the desk |
 
 ## Editing content
 
-Everything the site says lives in [`src/data/content.ts`](src/data/content.ts): contact details, case studies, jobs, skills, life story chapters and stickers. Bracketed text such as `[what you built]` is a placeholder to fill in.
+Everything the site says lives in [`src/data/content.ts`](src/data/content.ts): contact details, data projects, case studies, jobs, skills, life story chapters and stickers. Bracketed text such as `[what you built]` is a placeholder to fill in.
 
 After any edit, run the guard rails:
 
@@ -119,7 +122,7 @@ bun run test
 They check that slugs are unique, every metric has a caption, every job links to a real case study, skill beams point at existing projects, the CV grade is right, and no em or en dashes slipped into the copy.
 
 > [!IMPORTANT]
-> Every number on the site must trace back to the CV. If a figure is not in `public/BD_resume.pdf`, it does not go on the site.
+> Every number on the site must trace back to the CV. If a figure is not in `public/data_resume.pdf` or the project write-ups, it does not go on the site.
 
 Internal links should be built with the `to()` helper from `src/lib/url.ts` so they stay relative:
 

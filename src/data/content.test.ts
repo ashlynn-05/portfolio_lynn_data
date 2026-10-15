@@ -1,11 +1,27 @@
 import { describe, expect, it } from "vitest";
-import { chapters, jobs, projects, skills, beamProjects, stickers } from "./content";
+import { chapters, jobs, projects, dataProjects, skills, beamProjects, stickers } from "./content";
 
 // Guard rails for content edits: the site promises every number traces to the CV.
 describe("content", () => {
   it("has unique case study slugs", () => {
     const slugs = projects.map((p) => p.slug);
     expect(new Set(slugs).size).toBe(slugs.length);
+  });
+
+  it("has unique data project slugs, each with a GitHub link", () => {
+    const slugs = dataProjects.map((d) => d.slug);
+    expect(new Set(slugs).size).toBe(slugs.length);
+    for (const d of dataProjects) expect(d.github).toMatch(/^https:\/\/github\.com\/ashlynn-05\//);
+  });
+
+  it("gives every data project metric a caption and a value", () => {
+    for (const d of dataProjects) {
+      expect(d.metrics.length).toBeGreaterThan(0);
+      for (const m of d.metrics) {
+        expect(m.caption.length).toBeGreaterThan(0);
+        expect(m.value !== null || !!m.text).toBe(true);
+      }
+    }
   });
 
   it("gives every metric a caption and either a number or a text value", () => {
@@ -28,7 +44,7 @@ describe("content", () => {
   });
 
   it("uses no em or en dashes in visible copy", () => {
-    const text = JSON.stringify({ chapters, jobs, projects, skills, stickers });
+    const text = JSON.stringify({ chapters, jobs, projects, dataProjects, skills, stickers });
     expect(text).not.toMatch(/[–—]/);
   });
 

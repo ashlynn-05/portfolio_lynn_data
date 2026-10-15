@@ -9,7 +9,7 @@ import JsonLd from "../components/JsonLd.astro";
 import MobileNav from "../components/MobileNav.astro";
 import CommandPalette, { type PaletteItem } from "../components/CommandPalette.tsx";
 import MediaLightbox from "../components/MediaLightbox.tsx";
-import { contact, projects } from "../data/content";
+import { contact, projects, dataProjects } from "../data/content";
 import { to } from "../lib/url";
 
 interface Props {
@@ -21,7 +21,7 @@ interface Props {
 
 const {
   title = "Lynn Le, Business Analytics",
-  description = "Lynn Le is a Business Analytics student at Deakin who turns market research and prospect data into pipelines, reports and booked meetings.",
+  description = "Lynn Le is a final-year Business Analytics student at Deakin who cleans messy data, builds dashboards in Power BI and Looker Studio, and turns analysis into decisions.",
   image = "/og/home.png",
   ogType = "website",
 } = Astro.props;
@@ -31,8 +31,10 @@ const canonicalURL = new URL(p, Astro.site ?? Astro.url);
 
 const paletteItems: PaletteItem[] = [
   { kind: "page", label: "Home", hint: "the desktop", url: to(p, "index.html") },
-  { kind: "page", label: "Works", hint: "all seven folders", url: to(p, "works.html") },
+  { kind: "page", label: "Projects", hint: "seven data projects", url: to(p, "projects.html") },
+  { kind: "page", label: "Experience", hint: "four roles", url: to(p, "works.html") },
   { kind: "page", label: "Life story", hint: "chapters and sidequests", url: to(p, "life-story.html") },
+  ...dataProjects.map((d) => ({ kind: "work" as const, label: d.name, hint: d.tools.slice(0, 3).join(", "), url: to(p, `projects/${d.slug}.html`) })),
   ...projects.map((w) => ({ kind: "work" as const, label: `${w.titleA} ${w.titleEm}`, hint: w.org, url: to(p, `works/${w.slug}.html`) })),
   { kind: "action", label: "Copy Lynn's email", hint: contact.email, url: "", action: "copy-email" },
   { kind: "action", label: "View resume", hint: "PDF", url: "", action: "resume" },
@@ -42,12 +44,12 @@ const person = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: contact.name,
-  jobTitle: "Business Development Representative Intern",
+  jobTitle: "Business Development Analyst Intern",
   worksFor: { "@type": "Organization", name: "Sidekick" },
   alumniOf: { "@type": "CollegeOrUniversity", name: "Deakin University" },
   address: { "@type": "PostalAddress", addressLocality: "Melbourne", addressRegion: "VIC", addressCountry: "AU" },
   email: `mailto:${contact.email}`,
-  sameAs: [contact.linkedin],
+  sameAs: [contact.linkedin, contact.github],
   url: Astro.site?.toString(),
 };
 ---

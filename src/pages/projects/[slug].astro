@@ -1,0 +1,141 @@
+---
+// Data project case page: same frame as a work case study (folder rail on the left,
+// one window on the right), with the brief, the approach steps, dashboards you can
+// open in the lightbox, the insight sticker, recommendations and the reflection.
+import Layout from "../../layouts/Layout.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import Icon from "../../components/Icon.astro";
+import Folder from "../../components/Folder.astro";
+import Sticker from "../../components/Sticker.astro";
+import Metric from "../../components/Metric.astro";
+import { dataProjects, type DataProject } from "../../data/content";
+import { to } from "../../lib/url";
+
+export function getStaticPaths() {
+  return dataProjects.map((d) => ({ params: { slug: d.slug }, props: { d } }));
+}
+
+const { d } = Astro.props as { d: DataProject };
+const p = Astro.url.pathname;
+const idx = dataProjects.findIndex((x) => x.slug === d.slug);
+const next = dataProjects[(idx + 1) % dataProjects.length];
+const figs = (d.figures ?? []).map((f) => ({ ...f, url: to(p, f.src) }));
+---
+
+<Layout title={`Lynn Le, ${d.name}`} description={d.summary} ogType="article">
+  <Nav slot="nav" current="projects" />
+
+  <div class="wrap cs">
+    <nav class="board cs-rail" aria-label="Project folders" data-cs-rail>
+      {dataProjects.map((o) => (
+        <Folder fill={o.fill} icon={o.icon} label={o.label} href={to(p, `projects/${o.slug}.html`)} current={o.slug === d.slug} />
+      ))}
+    </nav>
+
+    <article class="window cs-win" data-cs-win>
+      <div class="window__bar">
+        <div class="window__dots" aria-hidden="true"><span></span><span></span><span></span></div>
+        <span class="window__path">~/lynn/projects/{d.slug}</span>
+        <span class="window__meta">{d.year}</span>
+        <a class="window__close" href={to(p, "projects.html")} aria-label="Close and go back to the projects folder"><Icon name="x" /></a>
+      </div>
+      <div class="window__body cs-body">
+        <div class="cs-meta" data-intro>
+          <span class="badge">{d.name}</span>
+          <span class="chip chip--jasmine">{d.kind}</span>
+          {d.tools.map((t) => <span class="chip chip--outline">{t}</span>)}
+        </div>
+        <h1 class="h-md cs-title" data-intro>{d.titleA} <span class="em">{d.titleEm}</span></h1>
+
+        <div class="band" data-intro>
+          {d.metrics.map((m) => (
+            <div><Metric value={m.value} prefix={m.prefix} suffix={m.suffix} text={m.text} /><p>{m.caption}</p></div>
+          ))}
+        </div>
+
+        <div class="dp-brief" data-rise>
+          <div><h2 class="dp-h"><Icon name="target" />objective</h2><p class="p">{d.objective}</p></div>
+          <div><h2 class="dp-h"><Icon name="magnifying-glass" />context</h2><p class="p">{d.context}</p></div>
+          <div><h2 class="dp-h"><Icon name="user" />my role</h2><p class="p">{d.role}</p></div>
+        </div>
+
+        {d.methods && (
+          <section class="dp-block card did" data-rise>
+            <h2 class="dp-h"><Icon name="list-checks" />methods</h2>
+            <ul class="ticks">{d.methods.map((m) => <li><Icon name="check-circle" /><span>{m}</span></li>)}</ul>
+          </section>
+        )}
+
+        <section class="dp-block" data-rise>
+          <h2 class="dp-h"><Icon name="path" />how I worked through it</h2>
+          <ol class="dp-steps">
+            {d.approach.map((a) => <li class="card"><h3>{a.h}</h3><p class="p">{a.text}</p></li>)}
+          </ol>
+        </section>
+
+        {figs.length > 0 && (
+          <section class="dp-block" data-rise>
+            <h2 class="dp-h"><Icon name="chart-bar" />the dashboards</h2>
+            <div class={`dp-figs${figs.length === 1 ? " dp-figs--one" : ""}`} data-figs={JSON.stringify(figs.map((f) => ({ kind: "image", path: f.url, caption: f.caption, title: f.alt })))}>
+              {figs.map((f, i) => (
+                <figure class="dp-fig">
+                  <button type="button" data-fig={i} aria-label={`Open larger: ${f.caption}`}><img src={f.url} width={f.w} height={f.h} alt={f.alt} loading="lazy" decoding="async" /></button>
+                  <figcaption>{f.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <div class="dp-two">
+          <section class="dp-block card did" data-rise>
+            <h2 class="dp-h"><Icon name="check-circle" />what I recommended</h2>
+            <ul class="ticks">{d.recs.map((r) => <li><Icon name="check-circle" /><span>{r}</span></li>)}</ul>
+          </section>
+          <div class="dp-block">
+            <Sticker as="section" fill="jasmine" icon="lightbulb" status="key insight" title="What the data said" note={d.insight} class="impact" data-rise />
+            {d.insights && (
+              <ul class="ticks" data-rise>{d.insights.map((x) => <li><Icon name="sparkle" /><span>{x}</span></li>)}</ul>
+            )}
+          </div>
+        </div>
+
+        <section class="dp-block" data-rise>
+          <h2 class="dp-h"><Icon name="chat-circle-text" />looking back</h2>
+          <p class="p">{d.reflection}</p>
+          {d.next && <p class="p"><b>Next step:</b> {d.next}</p>}
+        </section>
+
+        <div class="tools" data-rise>
+          <span class="tools__label">skills used</span>
+          {d.skills.map((s) => <span class="chip chip--outline">{s}</span>)}
+        </div>
+
+        <div class="cs-foot">
+          <div class="dp-links">
+            <a class="btn btn--primary btn--sm magnetic" href={d.github} target="_blank" rel="noopener noreferrer"><Icon name="github-logo" />see the code</a>
+            <a class="btn btn--secondary" href={to(p, "projects.html")}><Icon name="arrow-left" />all projects</a>
+          </div>
+          <a class="btn btn--secondary" href={to(p, `projects/${next.slug}.html`)}>next project: {next.label}<Icon name="arrow-right" /></a>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <Footer slot="footer" title="Got data that needs a second look?" />
+</Layout>
+
+<script>
+  import "../../scripts/case";
+  import { openLightbox } from "../../lib/lightbox";
+  import type { MediaAsset } from "../../lib/media";
+
+  // Dashboards open full size in the shared media lightbox.
+  document.querySelectorAll<HTMLElement>("[data-figs]").forEach((wrap) => {
+    const assets = JSON.parse(wrap.dataset.figs ?? "[]") as MediaAsset[];
+    wrap.querySelectorAll<HTMLButtonElement>("[data-fig]").forEach((b) =>
+      b.addEventListener("click", () => openLightbox(assets, Number(b.dataset.fig))),
+    );
+  });
+</script>

@@ -99,7 +99,9 @@ Still banned: a second accent, dark sections, black shadows, a giant background 
 
 ## Content
 
-Projects (from the CV): Sidekick lead research, Codrops sponsor pipeline, Elite TALKS 2025 at SW Education, the Kim Beauty shop floor, The Muse Crochet campaigns, and the 2026 hackathon run.
+Data projects (from the project write-ups): BGIS workforce analytics, Altano Bank BI, Wellora marketing analytics, NextWave RFM, RetailPro predictive models, Apex data cleaning and Adidas social listening.
+
+Experience (from the CV): Sidekick workflow mapping, the Codrops CRM build, SW Education client dashboards, and The Muse Crochet restock signals.
 
 Contact: tlinhle05@gmail.com, 0449 921 128, LinkedIn (URL to come).
 

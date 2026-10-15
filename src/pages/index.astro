@@ -8,10 +8,12 @@ import Sticker from "../components/Sticker.astro";
 import Window from "../components/Window.astro";
 import SectionHead from "../components/SectionHead.astro";
 import Logo from "../components/Logo.astro";
-import { projects, jobs, skills, beamProjects, logos, logoOrder, contact } from "../data/content";
+import ProjectCard from "../components/ProjectCard.astro";
+import { projects, dataProjects, jobs, skills, beamProjects, logos, logoOrder, contact } from "../data/content";
 import { to } from "../lib/url";
 
 const p = Astro.url.pathname;
+const listJoin = (xs: string[]) => (xs.length < 2 ? xs.join("") : `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}`);
 
 // Beam geometry (no-JS fallback): skills and projects both sit on 58px rows.
 const beams = skills.flatMap((s, i) =>
@@ -35,14 +37,14 @@ const beams = skills.flatMap((s, i) =>
     </svg>
     <div class="wrap hero__grid">
       <div class="hero__copy" data-hero-copy>
-        <span class="status" data-intro><span class="status__dot" aria-hidden="true"></span><span class="status__label">Now:</span> BDR intern at Sidekick <span class="chip chip--jasmine">YC S26</span></span>
+        <span class="status" data-intro><span class="status__dot" aria-hidden="true"></span><span class="status__label">Now:</span> BD analyst intern at Sidekick <span class="chip chip--jasmine">YC S26</span></span>
         <h1 class="h-xl" data-hero-title>
           <span class="hero__name">Lynn Le,</span>
-          <span class="rot" data-rot aria-label="lead sourcer, analyst, sidequester"><span>lead sourcer.</span><span aria-hidden="true">analyst.</span><span aria-hidden="true">sidequester.</span></span>
+          <span class="rot" data-rot aria-label="data analyst, dashboard builder, sidequester"><span>data analyst.</span><span aria-hidden="true">dashboard builder.</span><span aria-hidden="true">sidequester.</span></span>
         </h1>
-        <p class="lead" data-intro>Business Analytics student at Deakin who turns market research and messy prospect data into pipelines, reports and booked meetings.</p>
+        <p class="lead" data-intro>Final-year Business Analytics student at Deakin who cleans messy data, builds the dashboards on top, and turns what they show into decisions a team can act on.</p>
         <div class="hero__ctas" data-intro>
-          <a class="btn btn--primary magnetic" href={to(p, "works.html")}><Icon name="folder-open" />open the work folder</a>
+          <a class="btn btn--primary magnetic" href={to(p, "projects.html")}><Icon name="chart-bar" />see the projects</a>
           <a class="btn btn--secondary magnetic" href={to(p, "life-story.html")}>read my life story</a>
         </div>
       </div>
@@ -59,13 +61,13 @@ const beams = skills.flatMap((s, i) =>
             <div class="photo photo--img"><img src={to(p, "img/lynn.webp")} srcset={`${to(p, "img/lynn-400.webp")} 400w, ${to(p, "img/lynn.webp")} 640w`} sizes="210px" width="640" height="800" alt="Lynn Le smiling, in a black top" draggable="false" fetchpriority="high" decoding="async" /></div>
             <figcaption>lynn, mid-sidequest</figcaption>
           </figure>
-          <span class="tag tag--1">research</span>
-          <span class="tag tag--2">outreach</span>
+          <span class="tag tag--1">SQL</span>
+          <span class="tag tag--2">Power BI</span>
           <div class="bigf__front"></div>
-          <span class="tag tag--3">reporting</span>
+          <span class="tag tag--3">insights</span>
         </div>
 
-        <Folder fill="rose" icon="folder-simple" label="works" href={to(p, "works.html")} class="orbit orbit--a" data-drag data-parallax="0.5" />
+        <Folder fill="rose" icon="chart-bar" label="projects" href={to(p, "projects.html")} class="orbit orbit--a" data-drag data-parallax="0.5" />
         <Folder fill="jasmine" icon="file-text" label="life-story.txt" href={to(p, "life-story.html")} class="orbit orbit--b" data-drag data-parallax="0.3" />
         <Folder fill="mist" icon="file-text" label="resume.pdf" href={to(p, contact.resume)} class="orbit orbit--c" data-drag data-parallax="0.7" data-resume />
       </div>
@@ -75,24 +77,24 @@ const beams = skills.flatMap((s, i) =>
   <section class="wrap stats-sec" aria-label="Numbers from the CV">
     <div class="stats">
       <div class="stat stat--lead" data-rise>
-        <Icon name="paper-plane-tilt" />
-        <span class="metric" data-count="50" data-suffix="+">50+</span>
-        <p class="stat__cap">active sponsor leads managed at once, across LinkedIn and email, at Codrops</p>
+        <Icon name="database" />
+        <span class="metric" data-count="10000" data-suffix="+">10,000+</span>
+        <p class="stat__cap">client records cleaned and standardised at SW Education, then turned into Power BI dashboards</p>
       </div>
       <div class="stat card" data-rise>
-        <Icon name="confetti" />
-        <span class="metric" data-count="300" data-suffix="+">300+</span>
-        <p class="stat__cap">registrations for Elite TALKS 2025</p>
+        <Icon name="trend-up" />
+        <span class="metric" data-count="3" data-suffix="x">3x</span>
+        <p class="stat__cap">qualified pipeline at Sidekick, from 30+ segmented prospect profiles</p>
       </div>
       <div class="stat card" data-rise>
-        <Icon name="hand-waving" />
-        <span class="metric" data-count="100" data-suffix="+">100+</span>
-        <p class="stat__cap">customers helped a day on the Kim Beauty floor</p>
+        <Icon name="brain" />
+        <span class="metric" data-count="24">24</span>
+        <p class="stat__cap">predictive models built and compared for RetailPro</p>
       </div>
       <div class="stat card" data-rise>
-        <Icon name="lightning" />
-        <span class="metric" data-count="25" data-prefix="+" data-suffix="%">+25%</span>
-        <p class="stat__cap">digital engagement for The Muse Crochet</p>
+        <Icon name="buildings" />
+        <span class="metric">$11.36M</span>
+        <p class="stat__cap">in non-billable cost traced to its source for BGIS</p>
       </div>
     </div>
   </section>
@@ -104,7 +106,7 @@ const beams = skills.flatMap((s, i) =>
         {[0, 1].map((copy) => (
           <ul class="marquee__track" aria-hidden={copy ? "true" : undefined}>
             {logoOrder.map((id) => (
-              <li><a class="logos__item" href={to(p, `works/${logos[id].slug}.html`)} aria-label={`${logos[id].name}, open the case study`} tabindex={copy ? -1 : undefined}><Logo id={id} variant="full" /></a></li>
+              <li><a class="logos__item" href={to(p, logos[id].href)} aria-label={`${logos[id].name}, open the case study`} tabindex={copy ? -1 : undefined}><Logo id={id} variant="full" /></a></li>
             ))}
           </ul>
         ))}
@@ -113,8 +115,20 @@ const beams = skills.flatMap((s, i) =>
   </section>
 
 
+  <section id="projects" class="wrap sec" aria-labelledby="projects-h">
+    <SectionHead id="projects-h" hint="each one has a write-up and the code" hintIcon="chart-bar">Projects with real data <span class="em">inside.</span></SectionHead>
+    <div class="pj-grid">
+      {dataProjects.slice(0, 4).map((d, i) => <ProjectCard d={d} lead={i === 1} data-rise />)}
+      <div class="pj-more card" data-rise>
+        <p class="pj-more__h">{dataProjects.length - 4} more in the folder.</p>
+        <p class="p">{listJoin(dataProjects.slice(4).map((d) => d.name))}, plus a list view of all {dataProjects.length}.</p>
+        <a class="btn btn--secondary magnetic" href={to(p, "projects.html")}><Icon name="folder-open" />open the projects folder</a>
+      </div>
+    </div>
+  </section>
+
   <section id="work" class="wrap sec" aria-labelledby="work-h">
-    <SectionHead id="work-h" hint="psst, drag these. click one to open it." hintIcon="hand-grabbing">Things I've shipped, in <span class="em">folders.</span></SectionHead>
+    <SectionHead id="work-h" hint="psst, drag these. click one to open it." hintIcon="hand-grabbing">Where the work happened, in <span class="em">folders.</span></SectionHead>
     <div class="board desk" data-desk>
       {projects.map((w) => (
         <Folder fill={w.fill} icon={w.icon} logo={w.logo} label={w.label} meta={w.meta} href={to(p, `works/${w.slug}.html`)} style={`left: ${w.pos.left}; top: ${w.pos.top}`} data-drag />
@@ -170,14 +184,14 @@ const beams = skills.flatMap((s, i) =>
 
   <section id="story" class="wrap sec" aria-labelledby="story-h">
     <SectionHead id="story-h" hint="it's a .txt file, but a cute one" hintIcon="file-text">The long version has <span class="em">sidequests.</span></SectionHead>
-    <Window path="~/lynn/life-story.txt" meta="7 chapters so far" data-rise bodyClass="teaser">
+    <Window path="~/lynn/life-story.txt" meta="8 chapters so far" data-rise bodyClass="teaser">
       <div style="display: flex; flex-direction: column; gap: 24px; align-items: flex-start">
         <ul class="teaser__lines">
           <li><b>2024</b>New city, new degree, a merit scholarship</li>
-          <li><b>2024</b>Said yes to cold outreach at Codrops</li>
+          <li><b>2024</b>Built my first CRM at Codrops</li>
           <li><b>2024</b>Crochet small biz era</li>
-          <li><b>2025</b>Learned to read a shop floor</li>
-          <li><b>2026</b>Five events in seven months</li>
+          <li><b>2025</b>Cleaned ten thousand records</li>
+          <li><b>2026</b>Learned to query, seven projects deep</li>
           <li><b>2026</b>Joined a YC startup</li>
         </ul>
         <a class="btn btn--secondary magnetic" href={to(p, "life-story.html")}>read my life story</a>

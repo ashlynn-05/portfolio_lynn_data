@@ -72,7 +72,7 @@ $$<HTMLAnchorElement>("[data-resume]").forEach((a) =>
   a.addEventListener("click", (e) => {
     e.preventDefault();
     // Show the CV as an image of its page (PDFs don't render inside every embed), with the PDF one tap away.
-    openLightbox([{ kind: "pdf", path: a.href, preview: new URL("img/resume-page.webp", a.href).href, download: "BD_resume.pdf", title: "Lynn Le, resume" }]);
+    openLightbox([{ kind: "pdf", path: a.href, preview: new URL("img/resume-page.webp", a.href).href, download: "Lynn_Le_resume.pdf", title: "Lynn Le, resume" }]);
   }),
 );
 
@@ -181,8 +181,8 @@ export function countUp(el: HTMLElement, duration = 1.4) {
   const o = { v: 0 };
   gsap.to(o, {
     v: target, duration, ease: "power3.out",
-    onUpdate: () => (el.textContent = `${pre}${Math.round(o.v)}${suf}`),
-    onComplete: () => (el.textContent = `${pre}${target}${suf}`),
+    onUpdate: () => (el.textContent = `${pre}${Math.round(o.v).toLocaleString("en-US")}${suf}`),
+    onComplete: () => (el.textContent = `${pre}${target.toLocaleString("en-US")}${suf}`),
   });
 }
 
