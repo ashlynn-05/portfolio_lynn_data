@@ -79,6 +79,11 @@ export default function CommandPalette({ items, email }: Props) {
         document.querySelector<HTMLAnchorElement>("[data-resume]")?.click();
         return;
       }
+      if (/^https?:/.test(item.url)) {
+        hide();
+        window.open(item.url, "_blank", "noopener,noreferrer");
+        return;
+      }
       window.location.href = item.url;
     },
     [email, hide],

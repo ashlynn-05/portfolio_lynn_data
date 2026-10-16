@@ -42,7 +42,9 @@ const next = projects[(idx + 1) % projects.length];
       <div class="window__body cs-body">
         <div class="cs-meta" data-intro>
           <span class="badge">{w.role}</span>
-          <span class="chip chip--outline chip--org">{w.logo && <Logo id={w.logo} />}{w.org}</span>
+          {w.site
+            ? <a class="chip chip--outline chip--org" href={w.site.href} target="_blank" rel="noopener noreferrer" aria-label={w.site.label}>{w.logo && <Logo id={w.logo} />}{w.org}<Icon name="arrow-up-right" /></a>
+            : <span class="chip chip--outline chip--org">{w.logo && <Logo id={w.logo} />}{w.org}</span>}
           {w.chips.map((c) => <span class="chip chip--outline">{c}</span>)}
         </div>
         <h1 class="h-md cs-title" data-intro>{w.titleA} <span class="em">{w.titleEm}</span></h1>
@@ -71,7 +73,10 @@ const next = projects[(idx + 1) % projects.length];
         </div>
 
         <div class="cs-foot">
-          <a class="btn btn--secondary" href={to(p, "works.html")}><Icon name="arrow-left" />back to the desktop</a>
+          <div class="dp-links">
+            <a class="btn btn--secondary" href={to(p, "works.html")}><Icon name="arrow-left" />back to the desktop</a>
+            {w.site && <a class="btn btn--secondary" href={w.site.href} target="_blank" rel="noopener noreferrer"><Icon name={w.site.icon} />{w.site.label}</a>}
+          </div>
           <a class="btn btn--secondary" href={to(p, `works/${next.slug}.html`)}>next folder: {next.label}<Icon name="arrow-right" /></a>
         </div>
       </div>

@@ -737,6 +737,13 @@ a { color: var(--label); }
 .dp-fig figcaption { font: 500 13px/1.4 var(--sans); color: var(--label); }
 .dp-two { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 22px; align-items: start; }
 .dp-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.dp-src { display: flex; flex-wrap: wrap; gap: 8px; }
+.pj__links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+a.chip--org { gap: 6px; text-decoration: none; color: inherit; }
+a.chip--org:hover { background: var(--soft-blush); }
+a.chip--org .i { width: 14px; height: 14px; }
+.mnav__social { display: flex; gap: 18px; font: 600 14px/1 var(--sans); }
+.mnav__social a { color: var(--on-berry); text-underline-offset: 3px; }
 @media (max-width: 860px) {
   .dp-brief, .dp-two, .dp-figs { grid-template-columns: minmax(0, 1fr); }
 }

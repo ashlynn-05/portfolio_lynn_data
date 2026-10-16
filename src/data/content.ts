@@ -47,6 +47,7 @@ export interface Project {
   chips: string[];
   problem: string;
   did: (string | { text: string; href: string; link: string })[];
+  site?: { href: string; label: string; icon: string }; // the org's own page, from the CV
   metrics: Metric[];
   impactTitle: string;
   impactNote: string;
@@ -60,6 +61,7 @@ export const projects: Project[] = [
   {
     slug: 'sidekick', fill: 'berry', icon: 'flow-arrow', label: 'workflow mapping', meta: 'Sidekick, 2026',
     org: 'Sidekick (YC S26)', logo: 'sidekick', role: 'Business Development Analyst Intern', where: 'Melbourne', dates: 'Jun 2026 to now',
+    site: { href: 'https://www.linkedin.com/company/textsidekick/', label: 'Sidekick on LinkedIn', icon: 'linkedin-logo' },
     titleA: 'Turning discovery calls into', titleEm: 'requirements.',
     chips: ['AI automation start-up', 'Melbourne'],
     problem: 'An early-stage AI automation start-up had a stack of qualitative discovery conversations, and needed to know which product integrations to build next.',
@@ -82,6 +84,7 @@ export const projects: Project[] = [
   {
     slug: 'codrops', fill: 'rose', icon: 'database', label: 'CRM build', meta: 'Codrops, 2024 to now',
     org: 'Codrops', logo: 'codrops', role: 'Partnership Associate', where: 'Remote', dates: 'Mar 2024 to now',
+    site: { href: 'https://tympanus.net/codrops/', label: 'visit Codrops', icon: 'arrow-up-right' },
     titleA: 'Designing the CRM behind a', titleEm: 'pipeline.',
     chips: ['frontend dev and UX/UI publication', '2M+ monthly readers', 'remote'],
     problem: 'Codrops reaches 2M+ web design and development readers a month, but there was no system to track sponsors from first contact to signed deal.',
@@ -104,6 +107,7 @@ export const projects: Project[] = [
   {
     slug: 'sw-education', fill: 'caramel', icon: 'chart-bar', label: 'client dashboards', meta: 'SW Education, 2025',
     org: 'SW Education Pty Ltd', logo: 'sw-education', role: 'Digital Analyst Intern', where: 'Melbourne', dates: 'Aug to Nov 2025',
+    site: { href: 'https://www.sweducation.com.au', label: 'visit SW Education', icon: 'arrow-up-right' },
     titleA: 'Ten thousand records,', titleEm: 'one clean view.',
     chips: ['education and career services', 'Melbourne'],
     problem: 'Client records were inconsistent, so operational reporting could not be trusted, and executives had no single view of engagement.',
@@ -125,6 +129,7 @@ export const projects: Project[] = [
   {
     slug: 'muse-crochet', fill: 'mist', icon: 'yarn', label: 'restock signals', meta: 'The Muse Crochet',
     org: 'The Muse Crochet', logo: 'muse-crochet', role: 'Sales & Customer Experience Associate', where: 'Melbourne', dates: 'Nov 2024 to Mar 2025',
+    site: { href: 'https://www.instagram.com/the.muse.crochet/', label: 'The Muse Crochet on Instagram', icon: 'instagram-logo' },
     titleA: 'Letting the order data pick', titleEm: 'the restock.',
     chips: ['small business', 'Melbourne'],
     problem: 'A small crochet business selling across a POS, an online store and Instagram, with restocking decisions made on gut feel.',
@@ -169,6 +174,7 @@ export interface DataProject {
   summary: string; // one line for cards
   github: string;
   dashboard?: string; // label for a live dashboard, when the write-up mentions one
+  sources?: { label: string; short: string; href: string; icon: string }[]; // other links from the write-up or CV
   tools: string[];
   skills: string[];
   objective: string;
@@ -222,6 +228,7 @@ export const dataProjects: DataProject[] = [
     titleA: 'Income, not credit score,', titleEm: 'drives spend.',
     summary: 'A six-page Power BI solution for a bank entering Australia, from data cleansing to three persona dashboards.',
     github: 'https://github.com/ashlynn-05/Altano---Business-Intelligence-Analytics',
+    sources: [{ label: 'read the BI report', short: 'report', href: 'https://docs.google.com/document/d/1IEvnGQxx8mIWV9cvOufNEo7V-QRCq2K5lJ0aXwn2Nts/edit?usp=sharing', icon: 'file-text' }],
     tools: ['Power BI', 'DAX', 'Power Query', 'Excel'],
     skills: ['data cleansing', 'OLAP and dimensional modelling', 'dashboard UX'],
     objective: "Give Altano Bank's Executive Board evidence-based visibility into portfolio performance, customer risk and growth sustainability ahead of its Australian expansion.",
@@ -274,6 +281,7 @@ export const dataProjects: DataProject[] = [
     titleA: 'Three problems, one', titleEm: 'root cause.',
     summary: 'Diagnosed retention gaps, digital channel inefficiencies and AI governance risk for a health retailer with BigQuery and Looker Studio.',
     github: 'https://github.com/ashlynn-05/Wellora_Marketing-Analytics',
+    sources: [{ label: 'open the Looker Studio dashboard', short: 'dashboard', href: 'https://datastudio.google.com/reporting/d69c5298-75fa-414d-b454-4d3cee7fa0b2', icon: 'chart-bar' }],
     dashboard: 'Looker Studio dashboard',
     tools: ['BigQuery', 'SQL', 'Looker Studio'],
     skills: ['customer segmentation', 'RFM-style retention analysis', 'GDPR and privacy analysis'],

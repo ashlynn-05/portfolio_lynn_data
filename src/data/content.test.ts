@@ -53,4 +53,12 @@ describe("content", () => {
     expect(text).not.toContain("82/100");
     expect(text).toContain("83/100");
   });
+
+  it("links every project and org out over https", () => {
+    for (const d of dataProjects) {
+      expect(d.github).toMatch(/^https:\/\/github\.com\/ashlynn-05\//);
+      for (const src of d.sources ?? []) expect(src.href).toMatch(/^https:\/\//);
+    }
+    for (const w of projects) expect(w.site?.href).toMatch(/^https:\/\//);
+  });
 });

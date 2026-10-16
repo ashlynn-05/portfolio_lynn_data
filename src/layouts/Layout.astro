@@ -38,6 +38,8 @@ const paletteItems: PaletteItem[] = [
   ...projects.map((w) => ({ kind: "work" as const, label: `${w.titleA} ${w.titleEm}`, hint: w.org, url: to(p, `works/${w.slug}.html`) })),
   { kind: "action", label: "Copy Lynn's email", hint: contact.email, url: "", action: "copy-email" },
   { kind: "action", label: "View resume", hint: "PDF", url: "", action: "resume" },
+  { kind: "action", label: "GitHub", hint: "all the code", url: contact.github },
+  { kind: "action", label: "LinkedIn", hint: "Lynn Le", url: contact.linkedin },
 ];
 
 const person = {

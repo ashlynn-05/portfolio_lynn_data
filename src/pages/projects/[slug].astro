@@ -47,6 +47,10 @@ const figs = (d.figures ?? []).map((f) => ({ ...f, url: to(p, f.src) }));
           {d.tools.map((t) => <span class="chip chip--outline">{t}</span>)}
         </div>
         <h1 class="h-md cs-title" data-intro>{d.titleA} <span class="em">{d.titleEm}</span></h1>
+        <div class="dp-src" data-intro>
+          <a class="pj__gh" href={d.github} target="_blank" rel="noopener noreferrer"><Icon name="github-logo" />code on GitHub</a>
+          {(d.sources ?? []).map((s) => <a class="pj__gh" href={s.href} target="_blank" rel="noopener noreferrer"><Icon name={s.icon} />{s.label}</a>)}
+        </div>
 
         <div class="band" data-intro>
           {d.metrics.map((m) => (
@@ -115,6 +119,7 @@ const figs = (d.figures ?? []).map((f) => ({ ...f, url: to(p, f.src) }));
         <div class="cs-foot">
           <div class="dp-links">
             <a class="btn btn--primary btn--sm magnetic" href={d.github} target="_blank" rel="noopener noreferrer"><Icon name="github-logo" />see the code</a>
+            {(d.sources ?? []).map((s) => <a class="btn btn--secondary" href={s.href} target="_blank" rel="noopener noreferrer"><Icon name={s.icon} />{s.label}</a>)}
             <a class="btn btn--secondary" href={to(p, "projects.html")}><Icon name="arrow-left" />all projects</a>
           </div>
           <a class="btn btn--secondary" href={to(p, `projects/${next.slug}.html`)}>next project: {next.label}<Icon name="arrow-right" /></a>

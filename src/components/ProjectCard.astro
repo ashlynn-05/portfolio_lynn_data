@@ -29,7 +29,8 @@ const cover = lead ? d.figures?.[0] : undefined;
     <ul class="pj__tools">{d.tools.map((t) => <li class="chip chip--outline">{t}</li>)}</ul>
     <div class="pj__foot">
       <span class="pj__open">open the case<Icon name="arrow-right" /></span>
-      <a class="pj__gh" href={d.github} target="_blank" rel="noopener noreferrer" aria-label={`${d.name} on GitHub`}><Icon name="github-logo" />code</a>
+      <span class="pj__links"><a class="pj__gh" href={d.github} target="_blank" rel="noopener noreferrer" aria-label={`${d.name} on GitHub`}><Icon name="github-logo" />code</a>
+      {(d.sources ?? []).map((s) => <a class="pj__gh" href={s.href} target="_blank" rel="noopener noreferrer" aria-label={`${d.name}: ${s.label}`}><Icon name={s.icon} />{s.short}</a>)}</span>
     </div>
   </div>
 </article>

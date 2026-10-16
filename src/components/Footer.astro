@@ -17,6 +17,7 @@ const p = Astro.url.pathname;
         <div class="cta__actions">
           <a class="btn btn--onberry magnetic" href={`mailto:${contact.email}`}><Icon name="envelope-simple" />say hi</a>
           <a class="btn btn--ghost" href={contact.linkedin} target="_blank" rel="noopener noreferrer"><Icon name="linkedin-logo" />linkedin</a>
+          <a class="btn btn--ghost" href={contact.github} target="_blank" rel="noopener noreferrer"><Icon name="github-logo" />github</a>
           <a class="btn btn--ghost" href={to(p, contact.resume)} target="_blank" rel="noopener" data-resume><Icon name="file-text" />resume</a>
         </div>
         <div class="cta__lines">
