@@ -16,7 +16,7 @@ const headline = (d: (typeof dataProjects)[number]) => {
 };
 ---
 
-<Layout title="Lynn Le, projects" description="Seven data projects by Lynn Le: BGIS workforce analytics, Altano Bank BI, Wellora marketing analytics, NextWave RFM, RetailPro predictive models, Apex data cleaning and Adidas social listening.">
+<Layout title="Lynn Le, Projects" description="Seven data projects by Lynn Le: BGIS workforce analytics, Altano Bank BI, Wellora marketing analytics, NextWave RFM, RetailPro predictive models, Apex data cleaning and Adidas social listening.">
   <Nav slot="nav" current="projects" />
 
   <div class="wrap ls-head">
@@ -25,7 +25,7 @@ const headline = (d: (typeof dataProjects)[number]) => {
         <h1 class="h-xl" data-split-lines>The projects <span class="em">folder.</span></h1>
         <p class="lead" data-intro>Seven projects in SQL, Power BI, Python and Excel. Each one opens with the brief, how I worked through it, what the data said, and what I'd do next.</p>
       </div>
-      <a class="btn btn--secondary magnetic" href={contact.github} target="_blank" rel="noopener noreferrer" data-intro><Icon name="github-logo" />all the code on GitHub</a>
+      <a class="btn btn--secondary magnetic" href={contact.github} target="_blank" rel="noopener noreferrer" data-intro><Icon name="github-logo" />All the code on GitHub</a>
     </Window>
   </div>
 
@@ -39,10 +39,10 @@ const headline = (d: (typeof dataProjects)[number]) => {
   <section class="wrap sec" aria-labelledby="list-h">
     <div class="sec-head">
       <h2 id="list-h" class="h-lg" data-rise>Same projects, <span class="em">list view.</span></h2>
-      <span class="hint" data-rise><Icon name="list-bullets" />for when you'd rather scan</span>
+      <span class="hint" data-rise><Icon name="list-bullets" />For when you'd rather scan</span>
     </div>
     <Window path="~/lynn/projects" meta={`${dataProjects.length} projects`} class="finder-win" bodyClass="finder-body" data-rise>
-      <div class="finder__head" aria-hidden="true"><span>name</span><span>headline</span></div>
+      <div class="finder__head" aria-hidden="true"><span>Name</span><span>Headline</span></div>
       <div class="finder" role="list">
         {dataProjects.map((d) => (
           <a class="finder__row" href={to(p, `projects/${d.slug}.html`)} role="listitem" data-row>
@@ -56,7 +56,7 @@ const headline = (d: (typeof dataProjects)[number]) => {
           </a>
         ))}
       </div>
-      <div class="finder__status"><span>{dataProjects.length} items</span><span>numbers from my own write-ups</span></div>
+      <div class="finder__status"><span>{dataProjects.length} items</span><span>Numbers from my own write-ups</span></div>
     </Window>
   </section>
 

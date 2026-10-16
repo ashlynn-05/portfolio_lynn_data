@@ -8,7 +8,7 @@ This is version 2. It keeps the original Lynn Le system (palette, Bricolage Grot
 
 Playful but recruiter-safe. Lynn talks to the reader directly, in short sentences.
 
-- UI labels are lowercase: "say hi", "open the work folder", "read my life story". Body copy is sentence case.
+- UI labels, buttons, chips and captions are sentence case: "Say hi", "Open the case", "Read my life story". Names keep their own capitals (Lynn Le, Business Analytics, Power BI). Body copy is sentence case too.
 - One label per intent across the whole site. Contact is always **say hi**. Work is always **open the work folder**.
 - Helpers are short and functional: "psst, drag these", "click a folder to open it".
 - Every number traces to the CV, word for word in meaning. If a number is not on the CV it does not go on the site. Unknown personal content becomes a greyed placeholder chapter or an open "add a quest" sticker, never invented copy.

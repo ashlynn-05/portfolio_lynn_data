@@ -35,7 +35,7 @@ if (board) {
     gsap.set(stickers, { x: 0, y: 0 });
     board.classList.toggle("is-tidy", tidy);
     tidyBtn.setAttribute("aria-pressed", String(tidy));
-    if (tidyLabel) tidyLabel.textContent = tidy ? "scatter again" : "tidy up";
+    if (tidyLabel) tidyLabel.textContent = tidy ? "Scatter again" : "Tidy up";
     if (!reduced()) {
       Flip.from(state, { duration: 0.75, ease: "expo.inOut", stagger: 0.03, absolute: true, onComplete: enableDrag });
     } else {

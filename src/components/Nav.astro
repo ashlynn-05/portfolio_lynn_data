@@ -8,9 +8,9 @@ const { current } = Astro.props;
 const p = Astro.url.pathname;
 
 const LINKS = [
-  { key: "projects", label: "projects", href: to(p, "projects.html") },
-  { key: "works", label: "experience", href: to(p, "works.html") },
-  { key: "story", label: "life story", href: to(p, "life-story.html") },
+  { key: "projects", label: "Projects", href: to(p, "projects.html") },
+  { key: "works", label: "Experience", href: to(p, "works.html") },
+  { key: "story", label: "Life story", href: to(p, "life-story.html") },
 ] as const;
 ---
 
@@ -18,7 +18,7 @@ const LINKS = [
   <div class="nav__bar">
     <a class="logo" href={to(p, "index.html")} aria-label="Lynn Le, home" data-astro-prefetch>
       <span class="logo__mark" aria-hidden="true">✦</span>
-      <span class="logo__name">lynn le<small>business analytics</small></span>
+      <span class="logo__name">Lynn Le<small>Business Analytics</small></span>
     </a>
     <nav class="nav__links" aria-label="Primary">
       {LINKS.map((l) => (
@@ -26,8 +26,8 @@ const LINKS = [
       ))}
     </nav>
     <div class="nav__end">
-      <button class="search-btn" type="button" data-cmdk aria-label="Jump anywhere (Command K)"><Icon name="magnifying-glass" /><span>jump</span><kbd>⌘K</kbd></button>
-      <a class="btn btn--primary btn--sm magnetic" href="#hi">say hi</a>
+      <button class="search-btn" type="button" data-cmdk aria-label="Jump anywhere (Command K)"><Icon name="magnifying-glass" /><span>Jump</span><kbd>⌘K</kbd></button>
+      <a class="btn btn--primary btn--sm magnetic" href="#hi">Say hi</a>
       <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
     </div>
     <span class="nav__prog" aria-hidden="true"></span>

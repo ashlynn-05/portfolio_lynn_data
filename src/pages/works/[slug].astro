@@ -57,24 +57,24 @@ const next = projects[(idx + 1) % projects.length];
 
         <div class="trio">
           <section data-rise>
-            <h2 class="trio__h"><Icon name="magnifying-glass" />problem</h2>
+            <h2 class="trio__h"><Icon name="magnifying-glass" />Problem</h2>
             <p class="p">{w.problem}</p>
           </section>
           <section class="card did" data-rise>
-            <h2 class="trio__h"><Icon name="check-circle" />what I did</h2>
+            <h2 class="trio__h"><Icon name="check-circle" />What I did</h2>
             <ul class="ticks">{w.did.map((d) => <li><Icon name="check-circle" />{typeof d === "string" ? <span>{d}</span> : <span>{d.text}. <a class="tick-link" href={d.href} target="_blank" rel="noopener noreferrer">{d.link}<Icon name="arrow-up-right" /></a></span>}</li>)}</ul>
           </section>
-          <Sticker as="section" fill={w.impactOpen ? "open" : "jasmine"} icon="lightning" status={w.impactOpen ? "to fill in" : "impact"} title={w.impactTitle} note={w.impactNote} class="impact" data-rise />
+          <Sticker as="section" fill={w.impactOpen ? "open" : "jasmine"} icon="lightning" status={w.impactOpen ? "to fill in" : "Impact"} title={w.impactTitle} note={w.impactNote} class="impact" data-rise />
         </div>
 
         <div class="tools" data-rise>
-          <span class="tools__label">skills used</span>
+          <span class="tools__label">Skills used</span>
           {w.skills.map((s) => <span class="chip chip--outline">{s}</span>)}
         </div>
 
         <div class="cs-foot">
           <div class="dp-links">
-            <a class="btn btn--secondary" href={to(p, "works.html")}><Icon name="arrow-left" />back to the desktop</a>
+            <a class="btn btn--secondary" href={to(p, "works.html")}><Icon name="arrow-left" />Back to the desktop</a>
             {w.site && <a class="btn btn--secondary" href={w.site.href} target="_blank" rel="noopener noreferrer"><Icon name={w.site.icon} />{w.site.label}</a>}
           </div>
           <a class="btn btn--secondary" href={to(p, `works/${next.slug}.html`)}>next folder: {next.label}<Icon name="arrow-right" /></a>

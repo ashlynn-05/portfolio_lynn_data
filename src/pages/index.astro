@@ -44,8 +44,8 @@ const beams = skills.flatMap((s, i) =>
         </h1>
         <p class="lead" data-intro>Final-year Business Analytics student at Deakin who cleans messy data, builds the dashboards on top, and turns what they show into decisions a team can act on.</p>
         <div class="hero__ctas" data-intro>
-          <a class="btn btn--primary magnetic" href={to(p, "projects.html")}><Icon name="chart-bar" />see the projects</a>
-          <a class="btn btn--secondary magnetic" href={to(p, "life-story.html")}>read my life story</a>
+          <a class="btn btn--primary magnetic" href={to(p, "projects.html")}><Icon name="chart-bar" />See the projects</a>
+          <a class="btn btn--secondary magnetic" href={to(p, "life-story.html")}>Read my life story</a>
         </div>
       </div>
 
@@ -59,15 +59,15 @@ const beams = skills.flatMap((s, i) =>
           <div class="bigf__back"></div>
           <figure class="bigf__photo" data-photo tabindex="0" aria-label="Photo of Lynn. Press and hold to lift it out of the folder.">
             <div class="photo photo--img"><img src={to(p, "img/lynn.webp")} srcset={`${to(p, "img/lynn-400.webp")} 400w, ${to(p, "img/lynn.webp")} 640w`} sizes="210px" width="640" height="800" alt="Lynn Le smiling, in a black top" draggable="false" fetchpriority="high" decoding="async" /></div>
-            <figcaption>lynn, mid-sidequest</figcaption>
+            <figcaption>Lynn, mid-sidequest</figcaption>
           </figure>
           <span class="tag tag--1">SQL</span>
           <span class="tag tag--2">Power BI</span>
           <div class="bigf__front"></div>
-          <span class="tag tag--3">insights</span>
+          <span class="tag tag--3">Insights</span>
         </div>
 
-        <Folder fill="rose" icon="chart-bar" label="projects" href={to(p, "projects.html")} class="orbit orbit--a" data-drag data-parallax="0.5" />
+        <Folder fill="rose" icon="chart-bar" label="Projects" href={to(p, "projects.html")} class="orbit orbit--a" data-drag data-parallax="0.5" />
         <Folder fill="jasmine" icon="file-text" label="life-story.txt" href={to(p, "life-story.html")} class="orbit orbit--b" data-drag data-parallax="0.3" />
         <Folder fill="mist" icon="file-text" label="resume.pdf" href={to(p, contact.resume)} class="orbit orbit--c" data-drag data-parallax="0.7" data-resume />
       </div>
@@ -79,22 +79,22 @@ const beams = skills.flatMap((s, i) =>
       <div class="stat stat--lead" data-rise>
         <Icon name="database" />
         <span class="metric" data-count="10000" data-suffix="+">10,000+</span>
-        <p class="stat__cap">client records cleaned and standardised at SW Education, then turned into Power BI dashboards</p>
+        <p class="stat__cap">Client records cleaned and standardised at SW Education, then turned into Power BI dashboards</p>
       </div>
       <div class="stat card" data-rise>
         <Icon name="trend-up" />
         <span class="metric" data-count="3" data-suffix="x">3x</span>
-        <p class="stat__cap">qualified pipeline at Sidekick, from 30+ segmented prospect profiles</p>
+        <p class="stat__cap">Qualified pipeline at Sidekick, from 30+ segmented prospect profiles</p>
       </div>
       <div class="stat card" data-rise>
         <Icon name="brain" />
         <span class="metric" data-count="24">24</span>
-        <p class="stat__cap">predictive models built and compared for RetailPro</p>
+        <p class="stat__cap">Predictive models built and compared for RetailPro</p>
       </div>
       <div class="stat card" data-rise>
         <Icon name="buildings" />
         <span class="metric">$11.36M</span>
-        <p class="stat__cap">in non-billable cost traced to its source for BGIS</p>
+        <p class="stat__cap">In non-billable cost traced to its source for BGIS</p>
       </div>
     </div>
   </section>
@@ -116,29 +116,29 @@ const beams = skills.flatMap((s, i) =>
 
 
   <section id="projects" class="wrap sec" aria-labelledby="projects-h">
-    <SectionHead id="projects-h" hint="each one has a write-up and the code" hintIcon="chart-bar">Projects with real data <span class="em">inside.</span></SectionHead>
+    <SectionHead id="projects-h" hint="Each one has a write-up and the code" hintIcon="chart-bar">Projects with real data <span class="em">inside.</span></SectionHead>
     <div class="pj-grid">
       {dataProjects.slice(0, 4).map((d, i) => <ProjectCard d={d} lead={i === 1} data-rise />)}
       <div class="pj-more card" data-rise>
         <p class="pj-more__h">{dataProjects.length - 4} more in the folder.</p>
         <p class="p">{listJoin(dataProjects.slice(4).map((d) => d.name))}, plus a list view of all {dataProjects.length}.</p>
-        <a class="btn btn--secondary magnetic" href={to(p, "projects.html")}><Icon name="folder-open" />open the projects folder</a>
+        <a class="btn btn--secondary magnetic" href={to(p, "projects.html")}><Icon name="folder-open" />Open the projects folder</a>
       </div>
     </div>
   </section>
 
   <section id="work" class="wrap sec" aria-labelledby="work-h">
-    <SectionHead id="work-h" hint="psst, drag these. click one to open it." hintIcon="hand-grabbing">Where the work happened, in <span class="em">folders.</span></SectionHead>
+    <SectionHead id="work-h" hint="Psst, drag these. click one to open it." hintIcon="hand-grabbing">Where the work happened, in <span class="em">folders.</span></SectionHead>
     <div class="board desk" data-desk>
       {projects.map((w) => (
         <Folder fill={w.fill} icon={w.icon} logo={w.logo} label={w.label} meta={w.meta} href={to(p, `works/${w.slug}.html`)} style={`left: ${w.pos.left}; top: ${w.pos.top}`} data-drag />
       ))}
-      <Sticker as="aside" fill="jasmine" status="note to self" title="Every number in here is on my CV." note="No rounding up. If it isn't real, it isn't in a folder." class="desk__note" />
+      <Sticker as="aside" fill="jasmine" status="Note to self" title="Every number in here is on my CV." note="No rounding up. If it isn't real, it isn't in a folder." class="desk__note" />
     </div>
   </section>
 
   <section id="experience" class="wrap sec" aria-labelledby="exp-h">
-    <SectionHead id="exp-h" hint="current roles first" hintIcon="calendar-blank">Where I've <span class="em">clocked in.</span></SectionHead>
+    <SectionHead id="exp-h" hint="Current roles first" hintIcon="calendar-blank">Where I've <span class="em">clocked in.</span></SectionHead>
     <div class="jobs">
       {jobs.map((j) => (
         <a class="job card" href={to(p, `works/${j.slug}.html`)} data-row>
@@ -160,7 +160,7 @@ const beams = skills.flatMap((s, i) =>
   </section>
 
   <section id="skills" class="wrap sec" aria-labelledby="skills-h">
-    <SectionHead id="skills-h" hint="pick a skill to trace it" hintIcon="magnifying-glass">What I'm good at, and <span class="em">where.</span></SectionHead>
+    <SectionHead id="skills-h" hint="Pick a skill to trace it" hintIcon="magnifying-glass">What I'm good at, and <span class="em">where.</span></SectionHead>
     <div class="card beams" data-beams data-rise>
       <div class="beam">
         <svg class="beam__svg" data-beam-svg viewBox="0 0 100 348" preserveAspectRatio="none" aria-hidden="true">
@@ -171,7 +171,7 @@ const beams = skills.flatMap((s, i) =>
             <button type="button" class={`skill${i === 0 ? " on" : ""}`} data-skill-btn={i} data-links={s.links.join(",")} data-note={s.note}>{s.label}</button>
           ))}
         </div>
-        <div class="beam__to" aria-hidden="true"><Icon name="arrow-down" weight="bold" /><span>shows up at</span></div>
+        <div class="beam__to" aria-hidden="true"><Icon name="arrow-down" weight="bold" /><span>Shows up at</span></div>
         <div class="beam__col beam__col--r">
           {beamProjects.map((bp, j) => (
             <span class={`proj f-${bp.fill}${skills[0].links.includes(j) ? " on" : ""}`} data-proj={j}><Logo id={bp.logo} variant="tile" class="co-logo--sm" />{bp.label}</span>
@@ -183,7 +183,7 @@ const beams = skills.flatMap((s, i) =>
   </section>
 
   <section id="story" class="wrap sec" aria-labelledby="story-h">
-    <SectionHead id="story-h" hint="it's a .txt file, but a cute one" hintIcon="file-text">The long version has <span class="em">sidequests.</span></SectionHead>
+    <SectionHead id="story-h" hint="It's a .txt file, but a cute one" hintIcon="file-text">The long version has <span class="em">sidequests.</span></SectionHead>
     <Window path="~/lynn/life-story.txt" meta="8 chapters so far" data-rise bodyClass="teaser">
       <div style="display: flex; flex-direction: column; gap: 24px; align-items: flex-start">
         <ul class="teaser__lines">
@@ -194,12 +194,12 @@ const beams = skills.flatMap((s, i) =>
           <li><b>2026</b>Learned to query, seven projects deep</li>
           <li><b>2026</b>Joined a YC startup</li>
         </ul>
-        <a class="btn btn--secondary magnetic" href={to(p, "life-story.html")}>read my life story</a>
+        <a class="btn btn--secondary magnetic" href={to(p, "life-story.html")}>Read my life story</a>
       </div>
       <div class="teaser__stack" aria-hidden="true">
-        <Sticker as="div" fill="berry" status="ongoing" title="Mentor first-years" style="left: 4%; top: 6%; rotate: -5deg" data-parallax="0.35" />
-        <Sticker as="div" fill="jasmine" status="complete" title="Run a shop on real data" style="right: 0; top: 34%; rotate: 4deg" data-parallax="0.15" />
-        <Sticker as="div" fill="open" status="your next quest" title="Add a quest" style="left: 10%; bottom: 0; rotate: -2deg" data-parallax="0.55" />
+        <Sticker as="div" fill="berry" status="Ongoing" title="Mentor first-years" style="left: 4%; top: 6%; rotate: -5deg" data-parallax="0.35" />
+        <Sticker as="div" fill="jasmine" status="Complete" title="Run a shop on real data" style="right: 0; top: 34%; rotate: 4deg" data-parallax="0.15" />
+        <Sticker as="div" fill="open" status="Your next quest" title="Add a quest" style="left: 10%; bottom: 0; rotate: -2deg" data-parallax="0.55" />
       </div>
     </Window>
   </section>

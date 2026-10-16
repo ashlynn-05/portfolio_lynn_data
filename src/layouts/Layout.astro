@@ -30,15 +30,15 @@ const p = Astro.url.pathname;
 const canonicalURL = new URL(p, Astro.site ?? Astro.url);
 
 const paletteItems: PaletteItem[] = [
-  { kind: "page", label: "Home", hint: "the desktop", url: to(p, "index.html") },
-  { kind: "page", label: "Projects", hint: "seven data projects", url: to(p, "projects.html") },
-  { kind: "page", label: "Experience", hint: "four roles", url: to(p, "works.html") },
-  { kind: "page", label: "Life story", hint: "chapters and sidequests", url: to(p, "life-story.html") },
+  { kind: "page", label: "Home", hint: "The desktop", url: to(p, "index.html") },
+  { kind: "page", label: "Projects", hint: "Seven data projects", url: to(p, "projects.html") },
+  { kind: "page", label: "Experience", hint: "Four roles", url: to(p, "works.html") },
+  { kind: "page", label: "Life story", hint: "Chapters and sidequests", url: to(p, "life-story.html") },
   ...dataProjects.map((d) => ({ kind: "work" as const, label: d.name, hint: d.tools.slice(0, 3).join(", "), url: to(p, `projects/${d.slug}.html`) })),
   ...projects.map((w) => ({ kind: "work" as const, label: `${w.titleA} ${w.titleEm}`, hint: w.org, url: to(p, `works/${w.slug}.html`) })),
   { kind: "action", label: "Copy Lynn's email", hint: contact.email, url: "", action: "copy-email" },
   { kind: "action", label: "View resume", hint: "PDF", url: "", action: "resume" },
-  { kind: "action", label: "GitHub", hint: "all the code", url: contact.github },
+  { kind: "action", label: "GitHub", hint: "All the code", url: contact.github },
   { kind: "action", label: "LinkedIn", hint: "Lynn Le", url: contact.linkedin },
 ];
 

@@ -57,11 +57,11 @@ $$<HTMLButtonElement>("[data-copy]").forEach((btn) => {
   btn.addEventListener("click", async () => {
     try {
       await navigator.clipboard.writeText(btn.dataset.copy ?? "");
-      btn.textContent = "copied";
+      btn.textContent = "Copied";
     } catch {
       const span = btn.previousElementSibling;
       if (span) window.getSelection()?.selectAllChildren(span);
-      btn.textContent = "selected, press copy";
+      btn.textContent = "Selected, press copy";
     }
     setTimeout(() => (btn.textContent = label), 1800);
   });
