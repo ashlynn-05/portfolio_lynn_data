@@ -10,7 +10,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
-    "test": "vitest run"
+    "test": "vitest run",
+    "figures": "node scripts/small-figures.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^5.0.5",

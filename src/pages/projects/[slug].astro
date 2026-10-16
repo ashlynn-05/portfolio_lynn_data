@@ -11,6 +11,7 @@ import Sticker from "../../components/Sticker.astro";
 import Metric from "../../components/Metric.astro";
 import { dataProjects, type DataProject } from "../../data/content";
 import { to } from "../../lib/url";
+import { figSrcset } from "../../lib/figure";
 
 export function getStaticPaths() {
   return dataProjects.map((d) => ({ params: { slug: d.slug }, props: { d } }));
@@ -84,7 +85,7 @@ const figs = (d.figures ?? []).map((f) => ({ ...f, url: to(p, f.src) }));
             <div class={`dp-figs${figs.length === 1 ? " dp-figs--one" : ""}`} data-figs={JSON.stringify(figs.map((f) => ({ kind: "image", path: f.url, caption: f.caption, title: f.alt })))}>
               {figs.map((f, i) => (
                 <figure class="dp-fig">
-                  <button type="button" data-fig={i} aria-label={`Open larger: ${f.caption}`}><img src={f.url} width={f.w} height={f.h} alt={f.alt} loading="lazy" decoding="async" /></button>
+                  <button type="button" data-fig={i} aria-label={`Open larger: ${f.caption}`}><img src={f.url} srcset={figSrcset(p, f)} sizes={figs.length === 1 ? "(max-width: 1180px) calc(100vw - 60px), 1100px" : "(max-width: 760px) calc(100vw - 60px), 560px"} width={f.w} height={f.h} alt={f.alt} loading="lazy" decoding="async" /></button>
                   <figcaption>{f.caption}</figcaption>
                 </figure>
               ))}

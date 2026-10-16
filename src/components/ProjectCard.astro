@@ -7,6 +7,7 @@ import FolderIcon from "./FolderIcon.astro";
 import Metric from "./Metric.astro";
 import type { DataProject } from "../data/content";
 import { to } from "../lib/url";
+import { figSrcset } from "../lib/figure";
 
 interface Props { d: DataProject; lead?: boolean; [key: string]: unknown }
 const { d, lead = false, ...rest } = Astro.props;
@@ -17,7 +18,7 @@ const covers = (d.figures ?? []).slice(0, lead ? 2 : 1);
 ---
 <article class={`pj card${lead ? " pj--lead" : ""}`} {...rest}>
   {covers.length > 0 && (
-    <div class="pj__cover">{covers.map((c) => <img src={to(p, c.src)} width={c.w} height={c.h} alt={c.alt} style={c.pos && `object-position: ${c.pos}`} loading="lazy" decoding="async" />)}</div>
+    <div class="pj__cover">{covers.map((c) => <img src={to(p, c.src)} srcset={figSrcset(p, c)} sizes="(max-width: 760px) calc(100vw - 60px), (max-width: 1060px) 46vw, 360px" width={c.w} height={c.h} alt={c.alt} style={c.pos && `object-position: ${c.pos}`} loading="lazy" decoding="async" />)}</div>
   )}
   <div class="pj__body">
     <div class="pj__top">
