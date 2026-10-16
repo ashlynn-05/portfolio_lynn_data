@@ -79,7 +79,7 @@ export const projects: Project[] = [
     impactTitle: '3x qualified pipeline',
     impactNote: 'And a requirements framework the founding team used to pick the next integrations.',
     skills: ['Process mapping', 'Requirements gathering', 'Segmentation', 'Stakeholder interviews'],
-    pos: { left: '6%', top: '12%' },
+    pos: { left: '6%', top: '9%' },
   },
   {
     slug: 'codrops', fill: 'rose', icon: 'database', label: 'CRM build', meta: 'Codrops, 2024 to now',
@@ -102,7 +102,7 @@ export const projects: Project[] = [
     impactTitle: '5 deals closed',
     impactNote: 'From a pipeline that is documented and auditable at every stage.',
     skills: ['CRM data design', 'Conversion tracking', 'Process documentation', 'Multi-workstream management'],
-    pos: { left: '30%', top: '50%' },
+    pos: { left: '13%', top: '53%' },
   },
   {
     slug: 'sw-education', fill: 'caramel', icon: 'chart-bar', label: 'Client dashboards', meta: 'SW Education, 2025',
@@ -124,7 +124,7 @@ export const projects: Project[] = [
     impactTitle: 'Reporting people can trust',
     impactNote: 'Clean records underneath, and executive dashboards on top.',
     skills: ['Data cleansing', 'Excel', 'Power BI', 'Executive reporting'],
-    pos: { left: '56%', top: '10%' },
+    pos: { left: '28%', top: '9%' },
   },
   {
     slug: 'muse-crochet', fill: 'mist', icon: 'yarn', label: 'Restock signals', meta: 'The Muse Crochet',
@@ -146,7 +146,7 @@ export const projects: Project[] = [
     impactTitle: '+18% repeat purchases',
     impactNote: 'An estimated lift over the 3-month period.',
     skills: ['Sales analysis', 'Trend spotting', 'Inventory decisions'],
-    pos: { left: '53%', top: '52%' },
+    pos: { left: '44%', top: '53%' },
   },
   {
     // Kept from the earlier BD portfolio (its CV listed these events); the data resume doesn't.
@@ -169,7 +169,7 @@ export const projects: Project[] = [
     impactTitle: 'Two builds you can open.',
     impactNote: 'Trustlane is live, and the SolarCycle code is on GitHub. Both links are in the list.',
     skills: ['AI tools', 'Teamwork under a deadline'],
-    pos: { left: '80%', top: '8%' },
+    pos: { left: '53%', top: '9%' },
   },
 ];
 
