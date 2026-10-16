@@ -76,6 +76,7 @@ Then open http://localhost:4321.
 | `bun run preview` | Preview the production build |
 | `bun run check` | Type-check `.astro` files |
 | `bun run test` | Run the content guard rails |
+| `bun run figures` | Make the 800px copy of any new project figure (cards and case-page grids load these; the test fails if one is missing) |
 
 ## Project structure
 

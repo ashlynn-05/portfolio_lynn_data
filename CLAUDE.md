@@ -13,6 +13,7 @@ bun install
 bun dev
 bun run build
 bun run test
+bun run figures   # after adding a project figure: makes its 800px copy
 ```
 
 ## Architecture

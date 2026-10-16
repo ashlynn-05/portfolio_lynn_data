@@ -1,3 +1,4 @@
+import fs from "node:fs";
 import { describe, expect, it } from "vitest";
 import { chapters, jobs, projects, dataProjects, skills, beamProjects, stickers } from "./content";
 
@@ -60,5 +61,12 @@ describe("content", () => {
       for (const src of d.sources ?? []) expect(src.href).toMatch(/^https:\/\//);
     }
     for (const w of projects) if (w.site) expect(w.site.href).toMatch(/^https:\/\//);
+  });
+
+  it("ships an 800px copy of every wide figure (npm run figures)", () => {
+    for (const d of dataProjects) for (const f of d.figures ?? []) {
+      expect(fs.existsSync(`public/${f.src}`)).toBe(true);
+      if (f.w > 800) expect(fs.existsSync(`public/${f.src.replace(/\.webp$/, "-800.webp")}`)).toBe(true);
+    }
   });
 });
