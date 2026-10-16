@@ -16,14 +16,14 @@ const headline = (d: (typeof dataProjects)[number]) => {
 };
 ---
 
-<Layout title="Lynn Le, Projects" description="Seven data projects by Lynn Le: BGIS workforce analytics, Altano Bank BI, Wellora marketing analytics, NextWave RFM, RetailPro predictive models, Apex data cleaning and Adidas social listening.">
+<Layout title="Lynn Le, Projects" description="Ten data projects by Lynn Le: BGIS workforce analytics, Altano Bank BI, Wellora marketing analytics, NextWave RFM, RetailPro predictive models, Apex data cleaning, Adidas social listening, the Cucina Originale data model, Sustainable Co UML modelling and the WboolRoam festival app.">
   <Nav slot="nav" current="projects" />
 
   <div class="wrap ls-head">
     <Window path="~/lynn/projects" meta={`${dataProjects.length} projects`} closeHref={to(p, "index.html")} closeLabel="Close and go home" bodyClass="ls-intro">
       <div style="display: flex; flex-direction: column; gap: 20px">
         <h1 class="h-xl" data-split-lines>The projects <span class="em">folder.</span></h1>
-        <p class="lead" data-intro>Seven projects in SQL, Power BI, Python and Excel. Each one opens with the brief, how I worked through it, what the data said, and what I'd do next.</p>
+        <p class="lead" data-intro>Ten projects in SQL, Power BI, Python, Excel and UML. Each one opens with the brief, how I worked through it, what the data said, and what I'd do next.</p>
       </div>
       <a class="btn btn--secondary magnetic" href={contact.github} target="_blank" rel="noopener noreferrer" data-intro><Icon name="github-logo" />All the code on GitHub</a>
     </Window>
