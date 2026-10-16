@@ -545,14 +545,14 @@ export const dataProjects: DataProject[] = [
     context: 'A team of four. Two members led stakeholder requirements analysis while I co-led the use case, sequence and domain class modelling.',
     role: 'Co-led Use Case, Sequence and Domain Class modelling.',
     approach: [
-      { h: 'Stakeholder mapping', text: 'Identified seven stakeholder groups, customers, donors, management, suppliers, the payment provider and logistics partners, and mapped each need to a functional requirement and its business justification.' },
+      { h: 'Stakeholder mapping', text: 'Identified six stakeholder groups, customers, donors, management, suppliers, the payment provider and logistics partners, and mapped each need to a functional requirement and its business justification.' },
       { h: 'Use case diagram', text: 'Captured actors from Customer and Donor through to the AI System and Logistics Management System across 15+ use cases, from browsing and virtual try-on to donation point redemption.' },
-      { h: 'Sequence and class modelling', text: "Modelled Place Order end to end as the system's most complex interaction, with explicit assumptions to keep the flow unambiguous, then translated both diagrams into a 14-class domain model." },
+      { h: 'Sequence and class modelling', text: "Modelled Place Order end to end as the system's most complex interaction, with explicit assumptions to keep the flow unambiguous, then translated both diagrams into a 17-class domain model." },
     ],
     metrics: [
-      { value: 7, caption: 'Stakeholder groups mapped to requirements' },
-      { value: 15, suffix: '+', caption: 'Use cases modelled across six actor types' },
-      { value: 14, caption: 'Classes in the domain model' },
+      { value: 6, caption: 'Stakeholder groups mapped to requirements' },
+      { value: 15, suffix: '+', caption: 'Use cases modelled across nine actor types' },
+      { value: 17, caption: 'Classes in the domain model' },
     ],
     insight: 'The hardest part was not the standard retail flow, it was reconciling two parallel value exchanges, money for purchases and points for donations, in one coherent system. That forced explicit subtype modelling for payment rather than treating donations as an edge case.',
     recs: [
@@ -561,6 +561,11 @@ export const dataProjects: DataProject[] = [
       'Build the AI recommendation service as its own bounded component.',
     ],
     reflection: 'Learned to resolve ambiguity by writing assumptions down explicitly rather than letting the diagrams imply behaviour the brief never specified. It made the model far cleaner to hand off.',
+    figures: [
+      { src: 'img/projects/sustainable-co-class.webp', w: 1400, h: 914, alt: 'UML class diagram: User with Customer and Donor subtypes, Payment with Card and Point subtypes, plus Shopping Cart, Order, Product, Inventory Management System, AI System and the shipping and report boundary classes', caption: 'The 17-class domain model' },
+      { src: 'img/projects/sustainable-co-sequence.webp', w: 731, h: 903, alt: 'UML sequence diagram for Place Order with an alt frame splitting point payment from card payment, then handing order details to the logistics system', caption: 'Place Order: points or card' },
+      { src: 'img/projects/sustainable-co-use-case.webp', w: 1134, h: 901, alt: 'UML use case diagram for the Sustainable Co system with supplier, user, donor, customer, management team, analyst, AI system, logistics and payment card provider actors', caption: 'The use case diagram' },
+    ],
   },
   {
     slug: 'wboolroam', fill: 'jasmine', icon: 'map-trifold', label: 'WboolRoam Agile PM', name: 'WboolRoam Festival App',
