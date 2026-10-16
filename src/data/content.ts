@@ -191,7 +191,7 @@ export const jobs = [
 
 /* ---------- Data projects (from Lynn's project write-ups) ---------- */
 
-export interface Figure { src: string; w: number; h: number; alt: string; caption: string }
+export interface Figure { src: string; w: number; h: number; alt: string; caption: string; pos?: string }
 
 export interface DataProject {
   slug: string;
@@ -253,6 +253,13 @@ export const dataProjects: DataProject[] = [
       "Stage 3 (months 2 to 6): deploy a live Power BI HR dashboard on BGIS's existing IFS Cloud environment.",
     ],
     reflection: "The lesson was resisting the urge to report the first number we found. The client's feedback after the first presentation pushed us to decompose the $11.36M further, and that is what turned a vague billing problem into an actionable one. I also learned to flag data quality issues rather than quietly fixing around them. The client valued that honesty in both rounds of feedback.",
+    figures: [
+      { src: 'img/projects/bgis-overview.webp', w: 1376, h: 772, alt: 'Power BI HR dashboard overview with headcount, terminations, non-billable cost and overtime KPIs', caption: 'HR dashboard overview' },
+      { src: 'img/projects/bgis-cost-billing.webp', w: 1332, h: 729, alt: 'Power BI cost and billing page showing non-billable cost by trade and billing status composition', caption: 'Cost and billing' },
+      { src: 'img/projects/bgis-non-billable.webp', w: 1400, h: 645, alt: 'Non-billable cost breakdown by customer, trade and quarter', caption: 'Non-billable cost breakdown' },
+      { src: 'img/projects/bgis-overtime-risk.webp', w: 1376, h: 772, alt: 'Power BI overtime and risk page with overtime trend by quarter and unbillable overtime by trade', caption: 'Overtime and risk' },
+      { src: 'img/projects/bgis-workforce-capacity.webp', w: 1376, h: 772, alt: 'Power BI workforce capacity page with hires against departures and terminations by trade', caption: 'Workforce capacity' },
+    ],
   },
   {
     slug: 'altano', fill: 'caramel', icon: 'bank', label: 'Altano Bank BI', name: 'Altano Bank Business Intelligence',
@@ -418,6 +425,11 @@ export const dataProjects: DataProject[] = [
       'Refine the architecture further before full production use.',
     ],
     reflection: "Testing 24 models side by side made the accuracy versus business-fit trade-off concrete, and forced me to justify the pick in business terms. Next time I'd run a systematic hyperparameter search instead of random sampling.",
+    figures: [
+      { src: 'img/projects/retailpro-predicted.webp', w: 589, h: 433, alt: 'Scatter plot of predicted against actual sales on the validation set', caption: 'Predicted against actual sales' },
+      { src: 'img/projects/retailpro-correlation.webp', w: 1400, h: 951, alt: 'Bar chart ranking each feature by its correlation with sales', caption: 'Feature correlation with sales' },
+      { src: 'img/projects/retailpro-loss.webp', w: 523, h: 393, alt: 'Training and validation loss curves across epochs for the neural network', caption: 'Training against validation loss' },
+    ],
   },
   {
     slug: 'apex', fill: 'caramel', icon: 'broom', label: 'Apex clean-up', name: 'Apex Global Solutions Data Cleaning',
@@ -446,6 +458,11 @@ export const dataProjects: DataProject[] = [
       'Build targeted campaigns for the high-value Home Office segment.',
     ],
     reflection: 'Negative quantities looked like returns at first, but the guidance confirmed they were entry errors, which would have changed the revenue validation. Now I check every fix against the business logic, not the statistically convenient answer.',
+    figures: [
+      { src: 'img/projects/apex-category.webp', w: 1145, h: 373, alt: 'Excel pivot and chart of revenue against profit margin by product category', caption: 'Revenue against margin by category', pos: '100% 50%' },
+      { src: 'img/projects/apex-region.webp', w: 1146, h: 450, alt: 'Excel pivot and chart of total revenue and profit margin by region', caption: 'Revenue and margin by region', pos: '100% 50%' },
+      { src: 'img/projects/apex-segment.webp', w: 1150, h: 496, alt: 'Excel chart of average order value and total orders by customer segment', caption: 'Order value by customer segment', pos: '50% 100%' },
+    ],
   },
   {
     slug: 'adidas', fill: 'rose', icon: 'sneaker', label: 'Adidas Samba', name: 'Adidas Samba Social Listening',
@@ -477,6 +494,11 @@ export const dataProjects: DataProject[] = [
       'Activate high-degree X users for reach, and niche clusters for credibility.',
     ],
     reflection: "The three platforms weren't redundant: they measured discovery, trust and diffusion. Keeping them apart showed that 'demand is strong' and 'retention is at risk' were both true at once.",
+    figures: [
+      { src: 'img/projects/adidas-keywords.webp', w: 1111, h: 590, alt: 'Word cloud of the top 100 YouTube title keywords weighted by views', caption: 'Top YouTube title keywords by views' },
+      { src: 'img/projects/adidas-sentiment.webp', w: 1189, h: 690, alt: 'Stacked bars of negative, neutral and positive comment share per month across YouTube and Reddit', caption: 'Sentiment over time, YouTube and Reddit' },
+      { src: 'img/projects/adidas-aspects.webp', w: 1182, h: 788, alt: 'Word clouds of positive and negative comments about comfort and style', caption: 'Aspect clouds, positive against negative' },
+    ],
   },
 ];
 
