@@ -4,10 +4,10 @@ import { contact } from "../data/content";
 
 const p = Astro.url.pathname;
 const ITEMS = [
-  { label: "home", sub: "the desktop", href: to(p, "index.html") },
-  { label: "projects", sub: "seven data projects, with code", href: to(p, "projects.html") },
-  { label: "experience", sub: "four roles, real numbers", href: to(p, "works.html") },
-  { label: "life story", sub: "the long version, with sidequests", href: to(p, "life-story.html") },
+  { label: "Home", sub: "The desktop", href: to(p, "index.html") },
+  { label: "Projects", sub: "Seven data projects, with code", href: to(p, "projects.html") },
+  { label: "Experience", sub: "Four roles, real numbers", href: to(p, "works.html") },
+  { label: "Life story", sub: "The long version, with sidequests", href: to(p, "life-story.html") },
 ];
 ---
 
@@ -26,8 +26,8 @@ const ITEMS = [
     ))}
   </ul>
   <div class="mnav__foot">
-    <a class="btn btn--onberry" href="#hi">say hi</a>
+    <a class="btn btn--onberry" href="#hi">Say hi</a>
     <p class="copyline"><span>{contact.email}</span></p>
-    <p class="mnav__social"><a href={contact.linkedin} target="_blank" rel="noopener noreferrer">linkedin</a><a href={contact.github} target="_blank" rel="noopener noreferrer">github</a></p>
+    <p class="mnav__social"><a href={contact.linkedin} target="_blank" rel="noopener noreferrer">Linkedin</a><a href={contact.github} target="_blank" rel="noopener noreferrer">Github</a></p>
   </div>
 </div>

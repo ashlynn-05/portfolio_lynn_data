@@ -10,17 +10,17 @@ import { to } from "../lib/url";
 const p = Astro.url.pathname;
 ---
 
-<Layout title="Lynn Le, page not found" description="This page isn't on Lynn's desk.">
+<Layout title="Lynn Le, Page not found" description="This page isn't on Lynn's desk.">
   <Nav slot="nav" current="none" />
   <div class="wrap ls-head" style="padding-bottom: 96px">
-    <Window path="~/lynn/404" meta="file not found" closeHref={to(p, "index.html")} closeLabel="Close and go home">
+    <Window path="~/lynn/404" meta="File not found" closeHref={to(p, "index.html")} closeLabel="Close and go home">
       <div style="display: grid; gap: 22px; justify-items: start">
         <h1 class="h-xl">This folder isn't on <span class="em">the desk.</span></h1>
         <p class="lead">The link might be old, or the file moved. These ones are definitely here:</p>
         <div class="board more" style="width: 100%">
           {projects.map((w) => <Folder fill={w.fill} icon={w.icon} logo={w.logo} label={w.label} meta={w.meta} href={to(p, `works/${w.slug}.html`)} />)}
         </div>
-        <a class="btn btn--primary" href={to(p, "index.html")}><Icon name="arrow-left" />back to the desktop</a>
+        <a class="btn btn--primary" href={to(p, "index.html")}><Icon name="arrow-left" />Back to the desktop</a>
       </div>
     </Window>
   </div>

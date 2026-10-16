@@ -150,7 +150,7 @@ The HTML is always the final state, so the site reads fine with JavaScript off.
 
 ### Design system
 
-[`DESIGN.md`](DESIGN.md) is the canonical spec for tokens, type, components, motion and copy rules. In short: one Deep Space Royal accent (`#223382`, token `berry`) with a Habanero highlight, Bricolage Grotesque 800 over Space Grotesk, Phosphor icons plus the ✦ glyph, lowercase UI labels, no emoji, no dashes, no dark mode.
+[`DESIGN.md`](DESIGN.md) is the canonical spec for tokens, type, components, motion and copy rules. In short: one Deep Space Royal accent (`#223382`, token `berry`) with a Habanero highlight, Bricolage Grotesque 800 over Space Grotesk, Phosphor icons plus the ✦ glyph, sentence-case UI labels, no emoji, no dashes, no dark mode.
 
 > [!TIP]
 > Read `DESIGN.md` before changing anything visual. It also lists the patterns to avoid so the site never reads as templated.

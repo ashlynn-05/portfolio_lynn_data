@@ -15,14 +15,14 @@ const p = Astro.url.pathname;
       <div>
         <h2 id="hi-h" class="cta__title" data-split-lines>{title}</h2>
         <div class="cta__actions">
-          <a class="btn btn--onberry magnetic" href={`mailto:${contact.email}`}><Icon name="envelope-simple" />say hi</a>
-          <a class="btn btn--ghost" href={contact.linkedin} target="_blank" rel="noopener noreferrer"><Icon name="linkedin-logo" />linkedin</a>
-          <a class="btn btn--ghost" href={contact.github} target="_blank" rel="noopener noreferrer"><Icon name="github-logo" />github</a>
-          <a class="btn btn--ghost" href={to(p, contact.resume)} target="_blank" rel="noopener" data-resume><Icon name="file-text" />resume</a>
+          <a class="btn btn--onberry magnetic" href={`mailto:${contact.email}`}><Icon name="envelope-simple" />Say hi</a>
+          <a class="btn btn--ghost" href={contact.linkedin} target="_blank" rel="noopener noreferrer"><Icon name="linkedin-logo" />Linkedin</a>
+          <a class="btn btn--ghost" href={contact.github} target="_blank" rel="noopener noreferrer"><Icon name="github-logo" />Github</a>
+          <a class="btn btn--ghost" href={to(p, contact.resume)} target="_blank" rel="noopener" data-resume><Icon name="file-text" />Resume</a>
         </div>
         <div class="cta__lines">
-          <p class="copyline"><span>{contact.email}</span><button class="copy-btn" type="button" data-copy={contact.email}>copy email</button></p>
-          <p class="copyline"><span>{contact.phone}</span><button class="copy-btn" type="button" data-copy={contact.phone}>copy number</button></p>
+          <p class="copyline"><span>{contact.email}</span><button class="copy-btn" type="button" data-copy={contact.email}>Copy email</button></p>
+          <p class="copyline"><span>{contact.phone}</span><button class="copy-btn" type="button" data-copy={contact.phone}>Copy number</button></p>
         </div>
       </div>
       <div class="cta__art" data-drag-zone>
@@ -34,7 +34,7 @@ const p = Astro.url.pathname;
     </div>
   </div>
   <footer class="foot">
-    <span>✦ lynn le, business analytics, Melbourne</span>
-    <span><a href="#main">back to top</a></span>
+    <span>✦ Lynn Le, Business Analytics, Melbourne</span>
+    <span><a href="#main">Back to top</a></span>
   </footer>
 </section>

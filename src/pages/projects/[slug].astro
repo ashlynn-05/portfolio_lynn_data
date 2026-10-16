@@ -48,7 +48,7 @@ const figs = (d.figures ?? []).map((f) => ({ ...f, url: to(p, f.src) }));
         </div>
         <h1 class="h-md cs-title" data-intro>{d.titleA} <span class="em">{d.titleEm}</span></h1>
         <div class="dp-src" data-intro>
-          <a class="pj__gh" href={d.github} target="_blank" rel="noopener noreferrer"><Icon name="github-logo" />code on GitHub</a>
+          <a class="pj__gh" href={d.github} target="_blank" rel="noopener noreferrer"><Icon name="github-logo" />Code on GitHub</a>
           {(d.sources ?? []).map((s) => <a class="pj__gh" href={s.href} target="_blank" rel="noopener noreferrer"><Icon name={s.icon} />{s.label}</a>)}
         </div>
 
@@ -59,20 +59,20 @@ const figs = (d.figures ?? []).map((f) => ({ ...f, url: to(p, f.src) }));
         </div>
 
         <div class="dp-brief" data-rise>
-          <div><h2 class="dp-h"><Icon name="target" />objective</h2><p class="p">{d.objective}</p></div>
-          <div><h2 class="dp-h"><Icon name="magnifying-glass" />context</h2><p class="p">{d.context}</p></div>
-          <div><h2 class="dp-h"><Icon name="user" />my role</h2><p class="p">{d.role}</p></div>
+          <div><h2 class="dp-h"><Icon name="target" />Objective</h2><p class="p">{d.objective}</p></div>
+          <div><h2 class="dp-h"><Icon name="magnifying-glass" />Context</h2><p class="p">{d.context}</p></div>
+          <div><h2 class="dp-h"><Icon name="user" />My role</h2><p class="p">{d.role}</p></div>
         </div>
 
         {d.methods && (
           <section class="dp-block card did" data-rise>
-            <h2 class="dp-h"><Icon name="list-checks" />methods</h2>
+            <h2 class="dp-h"><Icon name="list-checks" />Methods</h2>
             <ul class="ticks">{d.methods.map((m) => <li><Icon name="check-circle" /><span>{m}</span></li>)}</ul>
           </section>
         )}
 
         <section class="dp-block" data-rise>
-          <h2 class="dp-h"><Icon name="path" />how I worked through it</h2>
+          <h2 class="dp-h"><Icon name="path" />How I worked through it</h2>
           <ol class="dp-steps">
             {d.approach.map((a) => <li class="card"><h3>{a.h}</h3><p class="p">{a.text}</p></li>)}
           </ol>
@@ -80,7 +80,7 @@ const figs = (d.figures ?? []).map((f) => ({ ...f, url: to(p, f.src) }));
 
         {figs.length > 0 && (
           <section class="dp-block" data-rise>
-            <h2 class="dp-h"><Icon name="chart-bar" />the dashboards</h2>
+            <h2 class="dp-h"><Icon name="chart-bar" />The dashboards</h2>
             <div class={`dp-figs${figs.length === 1 ? " dp-figs--one" : ""}`} data-figs={JSON.stringify(figs.map((f) => ({ kind: "image", path: f.url, caption: f.caption, title: f.alt })))}>
               {figs.map((f, i) => (
                 <figure class="dp-fig">
@@ -94,11 +94,11 @@ const figs = (d.figures ?? []).map((f) => ({ ...f, url: to(p, f.src) }));
 
         <div class="dp-two">
           <section class="dp-block card did" data-rise>
-            <h2 class="dp-h"><Icon name="check-circle" />what I recommended</h2>
+            <h2 class="dp-h"><Icon name="check-circle" />What I recommended</h2>
             <ul class="ticks">{d.recs.map((r) => <li><Icon name="check-circle" /><span>{r}</span></li>)}</ul>
           </section>
           <div class="dp-block">
-            <Sticker as="section" fill="jasmine" icon="lightbulb" status="key insight" title="What the data said" note={d.insight} class="impact" data-rise />
+            <Sticker as="section" fill="jasmine" icon="lightbulb" status="Key insight" title="What the data said" note={d.insight} class="impact" data-rise />
             {d.insights && (
               <ul class="ticks" data-rise>{d.insights.map((x) => <li><Icon name="sparkle" /><span>{x}</span></li>)}</ul>
             )}
@@ -106,21 +106,21 @@ const figs = (d.figures ?? []).map((f) => ({ ...f, url: to(p, f.src) }));
         </div>
 
         <section class="dp-block" data-rise>
-          <h2 class="dp-h"><Icon name="chat-circle-text" />looking back</h2>
+          <h2 class="dp-h"><Icon name="chat-circle-text" />Looking back</h2>
           <p class="p">{d.reflection}</p>
           {d.next && <p class="p"><b>Next step:</b> {d.next}</p>}
         </section>
 
         <div class="tools" data-rise>
-          <span class="tools__label">skills used</span>
+          <span class="tools__label">Skills used</span>
           {d.skills.map((s) => <span class="chip chip--outline">{s}</span>)}
         </div>
 
         <div class="cs-foot">
           <div class="dp-links">
-            <a class="btn btn--primary btn--sm magnetic" href={d.github} target="_blank" rel="noopener noreferrer"><Icon name="github-logo" />see the code</a>
+            <a class="btn btn--primary btn--sm magnetic" href={d.github} target="_blank" rel="noopener noreferrer"><Icon name="github-logo" />See the code</a>
             {(d.sources ?? []).map((s) => <a class="btn btn--secondary" href={s.href} target="_blank" rel="noopener noreferrer"><Icon name={s.icon} />{s.label}</a>)}
-            <a class="btn btn--secondary" href={to(p, "projects.html")}><Icon name="arrow-left" />all projects</a>
+            <a class="btn btn--secondary" href={to(p, "projects.html")}><Icon name="arrow-left" />All projects</a>
           </div>
           <a class="btn btn--secondary" href={to(p, `projects/${next.slug}.html`)}>next project: {next.label}<Icon name="arrow-right" /></a>
         </div>

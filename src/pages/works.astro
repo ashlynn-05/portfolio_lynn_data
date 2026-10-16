@@ -18,7 +18,7 @@ const headline = (w: (typeof projects)[number]) => {
 };
 ---
 
-<Layout title="Lynn Le, experience" description="Four roles from Lynn Le's CV: workflow mapping at Sidekick, a CRM build at Codrops, client dashboards at SW Education and restock signals at The Muse Crochet.">
+<Layout title="Lynn Le, Experience" description="Four roles from Lynn Le's CV: workflow mapping at Sidekick, a CRM build at Codrops, client dashboards at SW Education and restock signals at The Muse Crochet.">
   <Nav slot="nav" current="works" />
 
   <div class="wrap ls-head">
@@ -27,7 +27,7 @@ const headline = (w: (typeof projects)[number]) => {
         <h1 class="h-xl" data-split-lines>The experience <span class="em">folder.</span></h1>
         <p class="lead" data-intro>Four folders, one for each role on the CV. Open one for the brief, the work and the numbers. The data projects have their own folder.</p>
       </div>
-      <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start" data-intro><span class="hint"><Icon name="hand-grabbing" />drag them, or switch to the list below</span><a class="btn btn--secondary magnetic" href={to(p, "projects.html")}><Icon name="chart-bar" />see the projects</a></div>
+      <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start" data-intro><span class="hint"><Icon name="hand-grabbing" />Drag them, or switch to the list below</span><a class="btn btn--secondary magnetic" href={to(p, "projects.html")}><Icon name="chart-bar" />See the projects</a></div>
     </Window>
   </div>
 
@@ -37,17 +37,17 @@ const headline = (w: (typeof projects)[number]) => {
       {projects.map((w) => (
         <Folder fill={w.fill} icon={w.icon} logo={w.logo} label={w.label} meta={w.meta} href={to(p, `works/${w.slug}.html`)} style={`left: ${w.pos.left}; top: ${w.pos.top}`} data-drag />
       ))}
-      <Sticker as="aside" fill="jasmine" status="note to self" title="Every number in here is on my CV." note="No rounding up. If it isn't real, it isn't in a folder." class="desk__note" />
+      <Sticker as="aside" fill="jasmine" status="Note to self" title="Every number in here is on my CV." note="No rounding up. If it isn't real, it isn't in a folder." class="desk__note" />
     </div>
   </section>
 
   <section class="wrap sec" aria-labelledby="list-h">
     <div class="sec-head">
       <h2 id="list-h" class="h-lg" data-rise>Same folders, <span class="em">list view.</span></h2>
-      <span class="hint" data-rise><Icon name="list-bullets" />for when you'd rather scan</span>
+      <span class="hint" data-rise><Icon name="list-bullets" />For when you'd rather scan</span>
     </div>
     <Window path="~/lynn/works" meta={`${projects.length} folders`} class="finder-win" bodyClass="finder-body" data-rise>
-      <div class="finder__head" aria-hidden="true"><span>name</span><span>headline</span></div>
+      <div class="finder__head" aria-hidden="true"><span>Name</span><span>Headline</span></div>
       <div class="finder" role="list">
         {projects.map((w) => (
           <a class="finder__row" href={to(p, `works/${w.slug}.html`)} role="listitem" data-row>
@@ -61,7 +61,7 @@ const headline = (w: (typeof projects)[number]) => {
           </a>
         ))}
       </div>
-      <div class="finder__status"><span>{projects.length} items</span><span>every number is from the CV</span></div>
+      <div class="finder__status"><span>{projects.length} items</span><span>Every number is from the CV</span></div>
     </Window>
 
     <div class="crm card" data-rise>

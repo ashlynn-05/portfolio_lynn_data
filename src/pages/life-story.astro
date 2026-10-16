@@ -16,24 +16,24 @@ const written = chapters.filter((c) => !c.todo).length;
 const slug = (c: Chapter) => c.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 ---
 
-<Layout title="Lynn Le, life story" description="How Lynn Le got here: a move to Melbourne, a crochet small business, a shop floor, five events in seven months and a YC startup. Plus the sidequest log.">
+<Layout title="Lynn Le, Life story" description="How Lynn Le got here: a move to Melbourne, a crochet small business, a shop floor, five events in seven months and a YC startup. Plus the sidequest log.">
   <Nav slot="nav" current="story" />
 
   <div class="wrap ls-head">
-    <Window path="~/lynn/life-story.txt" meta="last edited Oct 2026" closeHref={to(p, "index.html")} closeLabel="Close and go home" bodyClass="ls-intro">
+    <Window path="~/lynn/life-story.txt" meta="Last edited Oct 2026" closeHref={to(p, "index.html")} closeLabel="Close and go home" bodyClass="ls-intro">
       <div style="display: flex; flex-direction: column; gap: 22px">
         <h1 class="h-xl" data-split-lines>A life in <span class="em">sidequests.</span></h1>
         <p class="lead" data-intro>The CV says what I did. This file says how I got here, and what I picked up along the way.</p>
       </div>
       <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start" data-intro>
         <span class="badge">✦ {written} chapters written</span>
-        <span class="chip chip--jasmine">currently: lifemaxxing</span>
+        <span class="chip chip--jasmine">Currently: lifemaxxing</span>
       </div>
     </Window>
   </div>
 
   <section class="wrap sec" aria-labelledby="tl-h">
-    <SectionHead id="tl-h" hint="greyed chapters haven't happened yet" hintIcon="calendar-blank">How I <span class="em">got here.</span></SectionHead>
+    <SectionHead id="tl-h" hint="Greyed chapters haven't happened yet" hintIcon="calendar-blank">How I <span class="em">got here.</span></SectionHead>
     <div class="pin" data-pin>
       <ol class="steps">
         <li class="steps__rail" aria-hidden="true"><i></i></li>
@@ -68,7 +68,7 @@ const slug = (c: Chapter) => c.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").r
               ) : (
                 <div class="photo" style="width: 200px; rotate: -3deg">[photo from this chapter]</div>
               )}
-              <Folder fill={c.fill} icon={c.todo ? "sparkle" : c.icon} label={c.todo ? "coming soon" : c.date} class="frame__folder" />
+              <Folder fill={c.fill} icon={c.todo ? "sparkle" : c.icon} label={c.todo ? "Coming soon" : c.date} class="frame__folder" />
               {c.sticker && <Sticker as="div" fill={c.sticker.fill} status={c.sticker.status} title={c.sticker.title} class="frame__sticker" />}
             </Window>
           </figure>
@@ -78,25 +78,25 @@ const slug = (c: Chapter) => c.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").r
   </section>
 
   <section class="wrap sec" aria-labelledby="sheet-h">
-    <SectionHead id="sheet-h" hint="stats from the CV, no grinding required" hintIcon="seal-check">Character <span class="em">sheet.</span></SectionHead>
+    <SectionHead id="sheet-h" hint="Stats from the CV, no grinding required" hintIcon="seal-check">Character <span class="em">sheet.</span></SectionHead>
     <div class="bento">
       <div class="card b-sheet" data-rise>
-        <h3>base stats</h3>
+        <h3>Base stats</h3>
         <dl class="sheet">
-          <dt>class</dt><dd>Business analyst</dd>
-          <dt>base</dt><dd>Melbourne</dd>
-          <dt>guild</dt><dd>Deakin University</dd>
-          <dt>grade</dt><dd><Metric value={83} suffix="/100" class="" /> High Distinction</dd>
-          <dt>buff</dt><dd>Deakin International Student Merit Scholarship</dd>
+          <dt>Class</dt><dd>Business analyst</dd>
+          <dt>Base</dt><dd>Melbourne</dd>
+          <dt>Guild</dt><dd>Deakin University</dd>
+          <dt>Grade</dt><dd><Metric value={83} suffix="/100" class="" /> High Distinction</dd>
+          <dt>Buff</dt><dd>Deakin International Student Merit Scholarship</dd>
         </dl>
       </div>
       <div class="b-inv" data-rise>
-        <h3>inventory</h3>
+        <h3>Inventory</h3>
         <div class="chips">{tools.map((t) => <span class="chip chip--outline">{t}</span>)}</div>
       </div>
       <ul class="b-roles">
-        <li class="card" data-rise><span class="tile"><Icon name="chalkboard-teacher" /></span><span>B&amp;L Peer Mentor<small>academic support for fellow students</small></span></li>
-        <li class="card" data-rise><span class="tile"><Icon name="piggy-bank" /></span><span>Finance Officer, MOVSA<small>chapter finances, Vietnamese student community</small></span></li>
+        <li class="card" data-rise><span class="tile"><Icon name="chalkboard-teacher" /></span><span>B&amp;L Peer Mentor<small>Academic support for fellow students</small></span></li>
+        <li class="card" data-rise><span class="tile"><Icon name="piggy-bank" /></span><span>Finance Officer, MOVSA<small>Chapter finances, Vietnamese student community</small></span></li>
         <li class="card" data-rise><span class="tile"><Icon name="confetti" /></span><span>DUSA Crew<small>Deakin University Student Association</small></span></li>
       </ul>
     </div>
@@ -106,8 +106,8 @@ const slug = (c: Chapter) => c.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").r
     <div class="sec-head">
       <h2 id="log-h" class="h-lg" data-rise>The sidequest <span class="em">log.</span></h2>
       <div class="board-tools" data-rise>
-        <span class="hint"><Icon name="hand-grabbing" />drag the stickers around, they don't mind</span>
-        <button class="btn btn--secondary" type="button" data-tidy aria-pressed="false"><Icon name="squares-four" /><span data-tidy-label>tidy up</span></button>
+        <span class="hint"><Icon name="hand-grabbing" />Drag the stickers around, they don't mind</span>
+        <button class="btn btn--secondary" type="button" data-tidy aria-pressed="false"><Icon name="squares-four" /><span data-tidy-label>Tidy up</span></button>
       </div>
     </div>
     <div class="board board--stickers" data-board>
