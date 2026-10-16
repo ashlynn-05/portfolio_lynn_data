@@ -500,6 +500,105 @@ export const dataProjects: DataProject[] = [
       { src: 'img/projects/adidas-aspects.webp', w: 1182, h: 788, alt: 'Word clouds of positive and negative comments about comfort and style', caption: 'Aspect clouds, positive against negative' },
     ],
   },
+  {
+    slug: 'cucina-originale', fill: 'mist', icon: 'cooking-pot', label: 'Cucina EER model', name: 'Cucina Originale Data Model',
+    kind: 'Case study', year: '2024',
+    titleA: 'One EER model behind', titleEm: 'five broken processes.',
+    summary: 'Designed an EER model and wrote the SQL behind it to unify a food and cooking-class business running on manual, disconnected systems.',
+    github: 'https://github.com/ashlynn-05/cucina-originale-eer-sql', // PLACEHOLDER, create this repo or replace with the real link
+    tools: ['Oracle SQL', 'EER Modelling'],
+    skills: ['SQL', 'EER / ER data modelling', 'Database design', 'Business reporting'],
+    objective: "Diagnose why Cucina Originale's manual and semi-automated booking, ordering and staff-allocation systems were breaking down, and design a unified data model to fix it.",
+    context: 'A solo assignment: bookings, orders, staff scheduling and product inventory were each tracked separately, with no shared structure between them.',
+    role: 'Solo: wrote all SQL queries, designed the EER model, and authored the client-facing business report.',
+    approach: [
+      { h: 'SQL fundamentals', text: 'Queried customer and product tables with filtering, pattern matching, ordering and aggregates, then joined order lines to products with a natural join to compute order subtotals.' },
+      { h: 'EER model design', text: "Modelled the full operation as one connected schema: Customers, Booking Classes, Orders, Products, Staff, Shifts and Delivery, with sub-typing where the business actually branches, Staff into Production, Packaging and Delivery, and Products into Herbs, Spices and Condiments." },
+      { h: 'Business translation', text: 'Converted the technical model into a report for a non-technical client, naming concrete benefits against concrete limitations, with a phased-rollout recommendation.' },
+    ],
+    metrics: [
+      { value: 20, suffix: '+', caption: 'Entities modelled into one EER schema' },
+      { value: 3, caption: 'Staff subtypes modelled: Production, Packaging, Delivery' },
+      { value: null, text: '3 tasks', caption: 'SQL queries, EER model and business report, end to end' },
+    ],
+    insight: "Cucina Originale's problem was not missing technology, it was fragmentation. Bookings, orders, staff scheduling and inventory were tracked in disconnected ways with no shared structure, so a single normalised EER model resolved most of the reported pain points without needing a new platform.",
+    recs: [
+      'Roll out the new data model in phases rather than all at once.',
+      'Train staff on the new system before customer-facing changes go live.',
+      'Communicate data-handling changes to customers ahead of launch.',
+    ],
+    reflection: 'First time building an EER model from a loosely defined business case rather than a handed-over schema. The real work was translating vague asks like staff allocation and booking management into concrete entities and relationships before writing a single query.',
+    figures: [
+      { src: 'img/projects/cucina-eer.webp', w: 1400, h: 1105, alt: 'EER diagram linking customers, cooking classes, orders, product lines, staff subtypes, shifts and delivery schedules', caption: 'The EER model' },
+      { src: 'img/projects/cucina-sql.webp', w: 1168, h: 399, alt: 'Oracle SQL session joining order lines to products with a natural join and computing a subtotal per line', caption: 'Order subtotals with a natural join' },
+    ],
+  },
+  {
+    slug: 'sustainable-co', fill: 'rose', icon: 'recycle', label: 'Sustainable Co UML', name: 'Sustainable Co Requirements and UML Model',
+    kind: 'Case study', year: '2024',
+    titleA: 'Two currencies, one', titleEm: 'system model.',
+    summary: 'Modelled a circular-fashion platform, retail, resale and donations in one system, through stakeholder analysis, use case, sequence and class diagrams.',
+    github: 'https://github.com/ashlynn-05/sustainable-co-uml', // PLACEHOLDER, create this repo or replace with the real link
+    tools: ['UML (Use Case, Sequence, Class Diagrams)'],
+    skills: ['Requirements elicitation', 'Stakeholder analysis', 'UML modelling', 'Business analysis'],
+    objective: 'Translate the business needs of a circular-fashion platform, combining retail, resale and donation with AI-driven personalisation, into a formal systems model developers could build from.',
+    context: 'A team of four. Two members led stakeholder requirements analysis while I co-led the use case, sequence and domain class modelling.',
+    role: 'Co-led Use Case, Sequence and Domain Class modelling.',
+    approach: [
+      { h: 'Stakeholder mapping', text: 'Identified seven stakeholder groups, customers, donors, management, suppliers, the payment provider and logistics partners, and mapped each need to a functional requirement and its business justification.' },
+      { h: 'Use case diagram', text: 'Captured actors from Customer and Donor through to the AI System and Logistics Management System across 15+ use cases, from browsing and virtual try-on to donation point redemption.' },
+      { h: 'Sequence and class modelling', text: "Modelled Place Order end to end as the system's most complex interaction, with explicit assumptions to keep the flow unambiguous, then translated both diagrams into a 14-class domain model." },
+    ],
+    metrics: [
+      { value: 7, caption: 'Stakeholder groups mapped to requirements' },
+      { value: 15, suffix: '+', caption: 'Use cases modelled across six actor types' },
+      { value: 14, caption: 'Classes in the domain model' },
+    ],
+    insight: 'The hardest part was not the standard retail flow, it was reconciling two parallel value exchanges, money for purchases and points for donations, in one coherent system. That forced explicit subtype modelling for payment rather than treating donations as an edge case.',
+    recs: [
+      'Hand the model straight to a dev team: actors, use cases and class relationships are explicit.',
+      'Extend the points economy with tiered donor rewards.',
+      'Build the AI recommendation service as its own bounded component.',
+    ],
+    reflection: 'Learned to resolve ambiguity by writing assumptions down explicitly rather than letting the diagrams imply behaviour the brief never specified. It made the model far cleaner to hand off.',
+  },
+  {
+    slug: 'wboolroam', fill: 'jasmine', icon: 'map-trifold', label: 'WboolRoam Agile PM', name: 'WboolRoam Festival App',
+    kind: 'Real client project', year: '2025',
+    titleA: 'Ninety-nine user stories,', titleEm: 'one festival app.',
+    summary: 'Ran five Scrum sprints to deliver an event, ticketing and safety app prototype for a real festival committee client.',
+    github: 'https://github.com/ashlynn-05/wboolroam-agile-pm', // PLACEHOLDER, create this repo or replace with the real link
+    tools: ['JIRA', 'Miro', 'Microsoft Teams'],
+    skills: ['Agile / Scrum', 'Sprint planning', 'Stakeholder management', 'UI/UX prototyping'],
+    objective: 'Deliver a client-ready mobile app prototype, event info, ticketing and safety features, for the Warrnambool Arts and Lost Trades Festival, using Scrum across five sprints.',
+    context: 'A team of six delivering for a real client, the Warrnambool Events Committee. 99 user stories across five sprints.',
+    role: 'Scrum Master for Sprint 4, wireframed the homepage, event listings and navigation on Miro, researched and mapped emergency and hospital locations for the safety features, and co-authored the final report.',
+    approach: [
+      { h: 'Sprint structure', text: 'Rotated the Scrum Master role weekly across five sprints. Story-point estimation evolved from a simple scale in Sprint 1 to Fibonacci from Sprint 3, visible in increasingly clean burndown charts.' },
+      { h: 'Incremental MVP', text: 'Tooling and environment, then branding and navigation, then safety features (swipe-to-call, location consent, hospital map), then visual standardisation, then sponsor integration and a three-click navigation structure for the final prototype.' },
+      { h: 'Process discipline', text: 'Structured stand-ups and five-question retrospectives drove continuous refinement of how the team wrote user stories, tightening vague personas and removing hidden dependencies after three rounds of retrospective feedback.' },
+    ],
+    metrics: [
+      { value: 99, caption: 'User stories delivered across five sprints' },
+      { value: 6, caption: 'Team members, real festival committee client' },
+      { value: 5, caption: 'Sprints, each closing with a reviewed MVP' },
+    ],
+    insight: 'The biggest recurring failure point was not technical, it was writing user stories with vague personas and hidden dependencies between stories, which took three retrospectives to fully resolve. It showed how much Agile delivery speed depends on backlog quality, not sprint velocity.',
+    recs: [
+      'Pilot the SOS and location-sharing flow with festival staff before go-live.',
+      'Integrate ticketing payments ahead of the next festival cycle.',
+      'Carry the retrospective-driven backlog discipline into the next sprint team.',
+    ],
+    reflection: 'Being Scrum Master for a sprint clarified how much of Agile delivery is communication discipline rather than tooling. The retrospectives on how we wrote user stories mattered more to the final output than the JIRA mechanics themselves.',
+    figures: [
+      { src: 'img/projects/wboolroam-sitemap.webp', w: 904, h: 726, alt: 'Sprint 5 prototype sitemap linking the splash and main menu to emergency, events booking and account sub-menus', caption: 'Sprint 5: the final sitemap' },
+      { src: 'img/projects/wboolroam-backlog.webp', w: 1400, h: 788, alt: 'JIRA product backlog slide: 99 user stories split 15, 21, 18, 24 and 21 across five sprints', caption: 'The product backlog: 99 user stories' },
+      { src: 'img/projects/wboolroam-burndown.webp', w: 1400, h: 788, alt: 'JIRA burndown charts for all five sprints with notes on what each one showed', caption: 'Burndown charts, sprint by sprint' },
+      { src: 'img/projects/wboolroam-safety.webp', w: 1400, h: 788, alt: 'Sprint 3 emergency screens (quick-dial, location consent, hospital map, incident report) beside the Sprint 4.1 unified design theme', caption: 'Sprint 3 safety features and the Sprint 4.1 design theme' },
+      { src: 'img/projects/wboolroam-unified.webp', w: 904, h: 742, alt: 'Sprint 4.2 prototype screens in the unified adjusted design, from splash and menus to the emergency flow', caption: 'Sprint 4.2: the unified adjusted design' },
+      { src: 'img/projects/wboolroam-stakeholders.webp', w: 1400, h: 788, alt: 'Stakeholder grid plotting impact against influence for the festival committee, council, Eastern Maar representatives, attendees, volunteers and the app team', caption: 'Stakeholder impact against influence' },
+    ],
+  },
 ];
 
 export const skills = [
@@ -507,8 +606,8 @@ export const skills = [
   { label: 'Dashboards and BI', links: [2, 4, 5], note: 'Power BI for SW Education executives and BGIS, plus Power BI (Altano) and Looker Studio (Wellora) in coursework.' },
   { label: 'SQL and Python', links: [4, 5], note: 'BigQuery SQL for Wellora and NextWave, Python for RetailPro models, Adidas social listening and BGIS data prep.' },
   { label: 'KPI and trend analysis', links: [1, 2, 3, 5], note: 'Conversion tracking at Codrops, engagement and conversion pathways at SW Education, and product velocity at The Muse Crochet.' },
-  { label: 'Process mapping and requirements', links: [0, 1], note: 'Shop-floor workflows and SOPs mapped into a requirements framework at Sidekick, and a documented, auditable pipeline at Codrops.' },
-  { label: 'Stakeholder communication', links: [0, 1, 2, 4], note: "From Sidekick's founding team to BGIS's People & Culture APAC executive." },
+  { label: 'Process mapping and requirements', links: [0, 1, 5], note: 'Shop-floor workflows and SOPs mapped into a requirements framework at Sidekick, a documented, auditable pipeline at Codrops, and stakeholder needs turned into UML models for Sustainable Co.' },
+  { label: 'Stakeholder communication', links: [0, 1, 2, 4, 5], note: "From Sidekick's founding team to BGIS's People & Culture APAC executive, plus a festival committee client while Scrum Master for a WboolRoam sprint." },
 ];
 
 export const beamProjects = [
@@ -569,9 +668,9 @@ export const chapters: Chapter[] = [
   },
   {
     date: '2025 to 2026', icon: 'chart-line-up', fill: 'caramel', title: 'Learned to query',
-    body: 'Seven data projects in BigQuery, Power BI, Python and Excel, from a real BGIS client engagement to 24 predictive models for RetailPro.',
+    body: 'Ten data projects across SQL, Power BI, Python, Excel and UML, from real client work for BGIS and the Warrnambool festival to 24 predictive models for RetailPro.',
     chips: ['BigQuery', 'Power BI', 'Python'],
-    big: { value: 7, caption: 'Data projects with write-ups and code' },
+    big: { value: dataProjects.length, caption: 'Data projects with write-ups and code' },
     sticker: { fill: 'plain', status: 'Levelling up', title: 'One new tool a quarter' },
   },
   {

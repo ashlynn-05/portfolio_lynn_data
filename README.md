@@ -28,7 +28,7 @@ The cute is the wrapper. The numbers inside are real: every metric on the site c
 
 **Highlights**
 
-- Seven data projects (BGIS workforce analytics, Altano Bank BI, Wellora marketing analytics, NextWave RFM, RetailPro predictive models, Apex data cleaning, Adidas social listening), each with its approach, dashboards, recommendations and a link to the code
+- Ten data projects (BGIS workforce analytics, Altano Bank BI, Wellora marketing analytics, NextWave RFM, RetailPro predictive models, Apex data cleaning, Adidas social listening, Cucina Originale data model, Sustainable Co UML model, WboolRoam festival app), each with its approach, dashboards, recommendations and a link to the code
 - Four experience case studies (Sidekick, Codrops, SW Education, The Muse Crochet), each opening as a window with its headline numbers
 - Draggable desk of folders with a list view fallback
 - Cmd+K command palette and a media lightbox, both as React islands
