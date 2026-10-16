@@ -77,7 +77,7 @@ const next = projects[(idx + 1) % projects.length];
             <a class="btn btn--secondary" href={to(p, "works.html")}><Icon name="arrow-left" />Back to the desktop</a>
             {w.site && <a class="btn btn--secondary" href={w.site.href} target="_blank" rel="noopener noreferrer"><Icon name={w.site.icon} />{w.site.label}</a>}
           </div>
-          <a class="btn btn--secondary" href={to(p, `works/${next.slug}.html`)}>next folder: {next.label}<Icon name="arrow-right" /></a>
+          <a class="btn btn--secondary" href={to(p, `works/${next.slug}.html`)}>Next folder: {next.label}<Icon name="arrow-right" /></a>
         </div>
       </div>
     </article>

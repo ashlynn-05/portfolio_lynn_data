@@ -146,7 +146,30 @@ export const projects: Project[] = [
     impactTitle: '+18% repeat purchases',
     impactNote: 'An estimated lift over the 3-month period.',
     skills: ['Sales analysis', 'Trend spotting', 'Inventory decisions'],
-    pos: { left: '74%', top: '48%' },
+    pos: { left: '53%', top: '52%' },
+  },
+  {
+    // Kept from the earlier BD portfolio (its CV listed these events); the data resume doesn't.
+    slug: 'hackathons', fill: 'jasmine', icon: 'trophy', label: 'Hackathon run', meta: '4 events, 2026',
+    org: 'Hackathons and competitions', role: 'Participant', where: 'Melbourne', dates: 'May to Sep 2026',
+    titleA: 'Four events in', titleEm: 'five months.',
+    chips: ['Hackathons', 'Competitions'],
+    problem: 'Between May and September 2026 I joined four events: one brainstorm competition and three hackathons, each with its own brief and a fixed deadline.',
+    did: [
+      "L'Oréal Brainstorm 2026 (May 2026)",
+      { text: 'Watt The Hack by MLAI x Monash DeepNeuron (Jun 2026), where the team built SolarCycle', href: 'https://github.com/cobeo2004/hackathon-fork', link: 'See the code' },
+      "AI Agentic Hackathon by GenFund AI (Jul 2026), placing in the Top 20 of 150 on the Founder's Track",
+      { text: 'Forward: AI in Business Hackathon by DSCube x Raid x Eleno (Sep 2026), where the team built Trustlane', href: 'https://trustlane.house-of-imaginaries.com/', link: 'Open Trustlane' },
+    ],
+    metrics: [
+      { value: 4, caption: 'Events between May and September 2026' },
+      { value: null, text: 'Top 20', caption: "Of 150 on the Founder's Track at the AI Agentic Hackathon" },
+      { value: 3, caption: "Hackathons, plus L'Oréal Brainstorm 2026" },
+    ],
+    impactTitle: 'Two builds you can open.',
+    impactNote: 'Trustlane is live, and the SolarCycle code is on GitHub. Both links are in the list.',
+    skills: ['AI tools', 'Teamwork under a deadline'],
+    pos: { left: '80%', top: '8%' },
   },
 ];
 
