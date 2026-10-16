@@ -747,3 +747,21 @@ a.chip--org .i { width: 14px; height: 14px; }
 @media (max-width: 860px) {
   .dp-brief, .dp-two, .dp-figs { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Hackathons on the home page: four event cards, the Top 20 one filled Habanero. */
+.hk-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.hk { display: flex; flex-direction: column; gap: 6px; padding: 22px; }
+.hk__icon { display: grid; place-items: center; width: 44px; height: 44px; margin-bottom: 8px; border-radius: 14px; background: var(--soft-blush); color: var(--berry); }
+.hk__icon .i { width: 22px; height: 22px; }
+.hk__date { font: 700 12px/1.3 var(--sans); letter-spacing: .07em; text-transform: uppercase; color: var(--meta); }
+.hk__name { font: 800 20px/1.15 var(--display); color: var(--ink); }
+.hk__by { font-size: 14px; color: var(--body); }
+.hk__result { margin-top: auto; padding-top: 12px; font: 700 15px/1.3 var(--sans); color: var(--ink); }
+.hk__link { font-size: 14px; }
+.hk--top { background: var(--jasmine); border-color: transparent; }
+.hk--top .hk__icon { background: var(--ink); color: var(--jasmine); }
+.hk--top .hk__date, .hk--top .hk__by { color: var(--ink); }
+.hk--top .hk__result { font-size: 18px; }
+.hk__more { margin-top: 22px; }
+@media (max-width: 1080px) { .hk-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .hk-grid { grid-template-columns: minmax(0, 1fr); } }

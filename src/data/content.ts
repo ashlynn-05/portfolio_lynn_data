@@ -173,6 +173,15 @@ export const projects: Project[] = [
   },
 ];
 
+/* Hackathons and competitions, kept from the earlier BD portfolio's CV. Shown as their own
+   section on the home page; the full write-up is the "hackathons" work case study. */
+export const hackathons = [
+  { name: "L'Oréal Brainstorm 2026", by: "L'Oréal", date: 'May 2026', icon: 'lightbulb', result: 'Brainstorm competition' },
+  { name: 'Watt The Hack', by: 'MLAI x Monash DeepNeuron', date: 'Jun 2026', icon: 'sun', result: 'Team built SolarCycle', href: 'https://github.com/cobeo2004/hackathon-fork', link: 'See the code' },
+  { name: 'AI Agentic Hackathon', by: "GenFund AI, Founder's Track", date: 'Jul 2026', icon: 'trophy', result: 'Top 20 of 150 teams', highlight: true },
+  { name: 'Forward: AI in Business Hackathon', by: 'DSCube x Raid x Eleno', date: 'Sep 2026', icon: 'rocket-launch', result: 'Team built Trustlane', href: 'https://trustlane.house-of-imaginaries.com/', link: 'Open Trustlane' },
+];
+
 export const jobs = [
   { icon: 'flow-arrow', org: 'Sidekick', logo: 'sidekick' as LogoId, chip: 'YC S26', dates: 'Jun 2026 to now, Melbourne', role: 'Business Development Analyst Intern', note: 'Mapped workflows and SOPs through discovery calls, then segmented 30+ prospect profiles by pain point. Contributed to a 3x increase in qualified pipeline.', slug: 'sidekick' },
   { icon: 'database', org: 'Codrops', logo: 'codrops' as LogoId, dates: 'Mar 2024 to now, remote', role: 'Partnership Associate', note: 'Designed the CRM fields and stages behind a 50+ sponsor pipeline, kept it auditable, and closed 5 deals to date.', slug: 'codrops' },
