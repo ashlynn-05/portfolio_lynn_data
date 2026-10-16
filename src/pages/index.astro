@@ -9,7 +9,7 @@ import Window from "../components/Window.astro";
 import SectionHead from "../components/SectionHead.astro";
 import Logo from "../components/Logo.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import { projects, dataProjects, jobs, skills, beamProjects, logos, logoOrder, contact } from "../data/content";
+import { projects, dataProjects, jobs, hackathons, skills, beamProjects, logos, logoOrder, contact } from "../data/content";
 import { to } from "../lib/url";
 
 const p = Astro.url.pathname;
@@ -157,6 +157,23 @@ const beams = skills.flatMap((s, i) =>
         </a>
       ))}
     </div>
+  </section>
+
+  <section id="hackathons" class="wrap sec" aria-labelledby="hack-h">
+    <SectionHead id="hack-h" hint="Four events in five months, 2026" hintIcon="trophy">Hackathons and <span class="em">competitions.</span></SectionHead>
+    <div class="hk-grid">
+      {hackathons.map((h) => (
+        <article class={`hk card${h.highlight ? " hk--top" : ""}`} data-rise>
+          <span class="hk__icon" aria-hidden="true"><Icon name={h.icon} weight="bold" /></span>
+          <p class="hk__date">{h.date}</p>
+          <h3 class="hk__name">{h.name}</h3>
+          <p class="hk__by">{h.by}</p>
+          <p class="hk__result">{h.result}</p>
+          {h.href && <a class="tick-link hk__link" href={h.href} target="_blank" rel="noopener noreferrer">{h.link}<Icon name="arrow-up-right" /></a>}
+        </article>
+      ))}
+    </div>
+    <a class="btn btn--secondary magnetic hk__more" href={to(p, "works/hackathons.html")} data-rise><Icon name="folder-open" />Open the hackathon folder</a>
   </section>
 
   <section id="skills" class="wrap sec" aria-labelledby="skills-h">

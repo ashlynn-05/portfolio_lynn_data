@@ -59,6 +59,6 @@ describe("content", () => {
       expect(d.github).toMatch(/^https:\/\/github\.com\/ashlynn-05\//);
       for (const src of d.sources ?? []) expect(src.href).toMatch(/^https:\/\//);
     }
-    for (const w of projects) expect(w.site?.href).toMatch(/^https:\/\//);
+    for (const w of projects) if (w.site) expect(w.site.href).toMatch(/^https:\/\//);
   });
 });

@@ -122,7 +122,7 @@ const figs = (d.figures ?? []).map((f) => ({ ...f, url: to(p, f.src) }));
             {(d.sources ?? []).map((s) => <a class="btn btn--secondary" href={s.href} target="_blank" rel="noopener noreferrer"><Icon name={s.icon} />{s.label}</a>)}
             <a class="btn btn--secondary" href={to(p, "projects.html")}><Icon name="arrow-left" />All projects</a>
           </div>
-          <a class="btn btn--secondary" href={to(p, `projects/${next.slug}.html`)}>next project: {next.label}<Icon name="arrow-right" /></a>
+          <a class="btn btn--secondary" href={to(p, `projects/${next.slug}.html`)}>Next project: {next.label}<Icon name="arrow-right" /></a>
         </div>
       </div>
     </article>
